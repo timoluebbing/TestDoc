@@ -8,3 +8,5 @@ toml==0.10.2
 scikit-image==0.21.0
 h5py==3.9.0
 matplotlib
+
+myst_parser
