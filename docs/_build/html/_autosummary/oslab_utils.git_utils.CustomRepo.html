@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>oslab_utils.git_utils.CustomRepo &mdash; NICE Toolbox 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/readthedocs-custom.css?v=9a3201e5" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            NICE Toolbox
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detectors.html">API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NICE Toolbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">oslab_utils.git_utils.CustomRepo</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="oslab-utils-git-utils-customrepo">
+<h1>oslab_utils.git_utils.CustomRepo<a class="headerlink" href="#oslab-utils-git-utils-customrepo" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">oslab_utils.git_utils.</span></span><span class="sig-name descname"><span class="pre">CustomRepo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></p>
+<p>Customize the Repo class from gitpython for easier access/use.</p>
+<p>This class extends the base class <cite>Repo</cite> from gitpython and provides additional methods
+for easier access and use of a git repository.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>repo_path (str): The path to the git repository.</p>
+</dd>
+<dt>Raises:</dt><dd><p>RuntimeError: If the <cite>repo_path</cite> is not a valid directory or a git repository.</p>
+</dd>
+<dt>Attributes:</dt><dd><p>None</p>
+</dd>
+<dt>Methods:</dt><dd><p>get_git_hash: Get the latest commit hash and message of the git repository.
+get_git_branch: Get the name of the currently active branch.
+get_changed_files: Get a list of all files that have been changed since the last commit.
+get_untracked_files: Get a list of all untracked files in the repository.
+commit_current_state: Commit the current state of the repository.</p>
+</dd>
+<dt>See Also:</dt><dd><ul class="simple">
+<li><p>Documentation of the base class <cite>Repo</cite>: <a class="reference external" href="https://gitpython.readthedocs.io/en/stable/index.html">https://gitpython.readthedocs.io/en/stable/index.html</a></p></li>
+</ul>
+</dd>
+</dl>
+<p>Create a new Repo instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – <p>the path to either the root git directory or the bare git repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;/Users/mtrier/Development/git-python&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;/Users/mtrier/Development/git-python.git&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;~/Development/git-python.git&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;$REPOSITORIES/Development/git-python.git&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;C:\Users\mtrier\Development\git-python\.git&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><p>In <em>Cygwin</em>, path may be a <cite>‘cygdrive/…’</cite> prefixed path.</p></li>
+<li><p>If it evaluates to false, <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">GIT_DIR</span></code> is used, and if this also evals to false,
+the current-directory is used.</p></li>
+</ul>
+</p></li>
+<li><p><strong>odbt</strong> – Object DataBase type - a type which is constructed by providing
+the directory containing the database objects, i.e. .git/objects. It will
+be used to access all object data</p></li>
+<li><p><strong>search_parent_directories</strong> – <p>if True, all parent directories will be searched for a valid repo as well.</p>
+<p>Please note that this was the default behaviour in older versions of GitPython,
+which is considered a bug though.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>InvalidGitRepositoryError</strong> – </p></li>
+<li><p><strong>NoSuchPathError</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>git.Repo</p>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.archive" title="oslab_utils.git_utils.CustomRepo.archive"><code class="xref py py-obj docutils literal notranslate"><span class="pre">archive</span></code></a></p></td>
+<td><p>Archive the tree at the given revision.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.blame" title="oslab_utils.git_utils.CustomRepo.blame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">blame</span></code></a></p></td>
+<td><p>The blame information for the given file at the given revision.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.blame_incremental" title="oslab_utils.git_utils.CustomRepo.blame_incremental"><code class="xref py py-obj docutils literal notranslate"><span class="pre">blame_incremental</span></code></a></p></td>
+<td><p>Iterator for blame information for the given file at the given revision.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.clone" title="oslab_utils.git_utils.CustomRepo.clone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clone</span></code></a></p></td>
+<td><p>Create a clone from this repository.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.clone_from" title="oslab_utils.git_utils.CustomRepo.clone_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clone_from</span></code></a></p></td>
+<td><p>Create a clone from the given URL</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.commit" title="oslab_utils.git_utils.CustomRepo.commit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">commit</span></code></a></p></td>
+<td><p>The Commit object for the specified revision</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">commit_current_state</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.config_reader" title="oslab_utils.git_utils.CustomRepo.config_reader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_reader</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">GitConfigParser</span></code></span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.config_writer" title="oslab_utils.git_utils.CustomRepo.config_writer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_writer</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">GitConfigParser</span></code></span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.create_head" title="oslab_utils.git_utils.CustomRepo.create_head"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_head</span></code></a></p></td>
+<td><p>Create a new head within the repository.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.create_remote" title="oslab_utils.git_utils.CustomRepo.create_remote"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_remote</span></code></a></p></td>
+<td><p>Create a new remote.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.create_submodule" title="oslab_utils.git_utils.CustomRepo.create_submodule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_submodule</span></code></a></p></td>
+<td><p>Create a new submodule</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.create_tag" title="oslab_utils.git_utils.CustomRepo.create_tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_tag</span></code></a></p></td>
+<td><p>Create a new tag reference.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.currently_rebasing_on" title="oslab_utils.git_utils.CustomRepo.currently_rebasing_on"><code class="xref py py-obj docutils literal notranslate"><span class="pre">currently_rebasing_on</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.delete_head" title="oslab_utils.git_utils.CustomRepo.delete_head"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_head</span></code></a></p></td>
+<td><p>Delete the given heads</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.delete_remote" title="oslab_utils.git_utils.CustomRepo.delete_remote"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_remote</span></code></a></p></td>
+<td><p>Delete the given remote.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.delete_tag" title="oslab_utils.git_utils.CustomRepo.delete_tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_tag</span></code></a></p></td>
+<td><p>Delete the given tag references</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.get_changed_files" title="oslab_utils.git_utils.CustomRepo.get_changed_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_changed_files</span></code></a></p></td>
+<td><p>Get a list of all files that have been changed since the last commit.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.get_git_branch" title="oslab_utils.git_utils.CustomRepo.get_git_branch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_git_branch</span></code></a></p></td>
+<td><p>Get the name of the currently active branch.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.get_git_hash" title="oslab_utils.git_utils.CustomRepo.get_git_hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_git_hash</span></code></a></p></td>
+<td><p>Get the latest commit hash and message of the git repository.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.get_untracked_files" title="oslab_utils.git_utils.CustomRepo.get_untracked_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_untracked_files</span></code></a></p></td>
+<td><p>Get a list of all untracked files in the repository.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.has_separate_working_tree" title="oslab_utils.git_utils.CustomRepo.has_separate_working_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_separate_working_tree</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.ignored" title="oslab_utils.git_utils.CustomRepo.ignored"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ignored</span></code></a></p></td>
+<td><p>Checks if paths are ignored via .gitignore Doing so using the &quot;git check-ignore&quot; method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.init" title="oslab_utils.git_utils.CustomRepo.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a></p></td>
+<td><p>Initialize a git repository at the given path if specified</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.is_ancestor" title="oslab_utils.git_utils.CustomRepo.is_ancestor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_ancestor</span></code></a></p></td>
+<td><p>Check if a commit is an ancestor of another</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.is_dirty" title="oslab_utils.git_utils.CustomRepo.is_dirty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_dirty</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_object</span></code></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.iter_commits" title="oslab_utils.git_utils.CustomRepo.iter_commits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_commits</span></code></a></p></td>
+<td><p>A list of Commit objects representing the history of a given ref/commit</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.iter_submodules" title="oslab_utils.git_utils.CustomRepo.iter_submodules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_submodules</span></code></a></p></td>
+<td><p>An iterator yielding Submodule instances, see Traversable interface for a description of args and kwargs</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.iter_trees" title="oslab_utils.git_utils.CustomRepo.iter_trees"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_trees</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Tree</span></code>]</span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.merge_base" title="oslab_utils.git_utils.CustomRepo.merge_base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_base</span></code></a></p></td>
+<td><p>Find the closest common ancestor for the given revision (e.g. Commits, Tags, References, etc).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.remote" title="oslab_utils.git_utils.CustomRepo.remote"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remote</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Remote</span></code></span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.rev_parse" title="oslab_utils.git_utils.CustomRepo.rev_parse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rev_parse</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TagReference</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Tree</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Blob</span></code>]</span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.submodule" title="oslab_utils.git_utils.CustomRepo.submodule"><code class="xref py py-obj docutils literal notranslate"><span class="pre">submodule</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Submodule</span></code></span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.submodule_update" title="oslab_utils.git_utils.CustomRepo.submodule_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">submodule_update</span></code></a></p></td>
+<td><p>Update the submodules, keeping the repository consistent as it will take the previous state into consideration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.tag" title="oslab_utils.git_utils.CustomRepo.tag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tag</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">TagReference</span></code></span></p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.tree" title="oslab_utils.git_utils.CustomRepo.tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tree</span></code></a></p></td>
+<td><p>The Tree object for the given treeish revision Examples.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">DAEMON_EXPORT_FILE</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.active_branch" title="oslab_utils.git_utils.CustomRepo.active_branch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">active_branch</span></code></a></p></td>
+<td><p>The name of the currently active branch.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.alternates" title="oslab_utils.git_utils.CustomRepo.alternates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">alternates</span></code></a></p></td>
+<td><p>Retrieve a list of alternates paths or set a list paths to be used as alternates</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.bare" title="oslab_utils.git_utils.CustomRepo.bare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bare</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the repository is bare</p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.branches" title="oslab_utils.git_utils.CustomRepo.branches"><code class="xref py py-obj docutils literal notranslate"><span class="pre">branches</span></code></a></p></td>
+<td><p>A list of <code class="docutils literal notranslate"><span class="pre">Head</span></code> objects representing the branch heads in this repo</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.common_dir" title="oslab_utils.git_utils.CustomRepo.common_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">common_dir</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The git dir that holds everything except possibly HEAD,</p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_level</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.daemon_export" title="oslab_utils.git_utils.CustomRepo.daemon_export"><code class="xref py py-obj docutils literal notranslate"><span class="pre">daemon_export</span></code></a></p></td>
+<td><p>If True, git-daemon may export this repository</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.description" title="oslab_utils.git_utils.CustomRepo.description"><code class="xref py py-obj docutils literal notranslate"><span class="pre">description</span></code></a></p></td>
+<td><p>the project's description</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">git</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.head" title="oslab_utils.git_utils.CustomRepo.head"><code class="xref py py-obj docutils literal notranslate"><span class="pre">head</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HEAD Object pointing to the current head reference</p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.heads" title="oslab_utils.git_utils.CustomRepo.heads"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heads</span></code></a></p></td>
+<td><p>A list of <code class="docutils literal notranslate"><span class="pre">Head</span></code> objects representing the branch heads in this repo</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.index" title="oslab_utils.git_utils.CustomRepo.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IndexFile representing this repository's index.</p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">re_author_committer_start</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">re_envvars</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">re_hexsha_only</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">re_hexsha_shortened</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">re_tab_full_line</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">re_whitespace</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.references" title="oslab_utils.git_utils.CustomRepo.references"><code class="xref py py-obj docutils literal notranslate"><span class="pre">references</span></code></a></p></td>
+<td><p>A list of Reference objects representing tags, heads and remote references.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.refs" title="oslab_utils.git_utils.CustomRepo.refs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">refs</span></code></a></p></td>
+<td><p>A list of Reference objects representing tags, heads and remote references.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.remotes" title="oslab_utils.git_utils.CustomRepo.remotes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remotes</span></code></a></p></td>
+<td><p>A list of Remote objects allowing to access and manipulate remotes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.submodules" title="oslab_utils.git_utils.CustomRepo.submodules"><code class="xref py py-obj docutils literal notranslate"><span class="pre">submodules</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>git.IterableList(Submodule, ...) of direct submodules</p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.tags" title="oslab_utils.git_utils.CustomRepo.tags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tags</span></code></a></p></td>
+<td><p>A list of <code class="docutils literal notranslate"><span class="pre">Tag</span></code> objects that are available in this repo</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unsafe_git_clone_options</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.untracked_files" title="oslab_utils.git_utils.CustomRepo.untracked_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">untracked_files</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.working_tree_dir" title="oslab_utils.git_utils.CustomRepo.working_tree_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">working_tree_dir</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The working tree directory of our git repository. If this is a bare repository, None is returned.</p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">working_dir</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">git_dir</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.GitCommandWrapperType">
+<span class="sig-name descname"><span class="pre">GitCommandWrapperType</span></span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.GitCommandWrapperType" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Git</span></code></p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.active_branch">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">active_branch</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Head</span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.active_branch" title="Link to this definition">¶</a></dt>
+<dd><p>The name of the currently active branch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – If HEAD is detached</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Head to the active branch</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.alternates">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alternates</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.alternates" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a list of alternates paths or set a list paths to be used as alternates</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.archive">
+<span class="sig-name descname"><span class="pre">archive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ostream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">treeish</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.archive" title="Link to this definition">¶</a></dt>
+<dd><p>Archive the tree at the given revision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ostream</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TextIO</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">BinaryIO</span></code>]</span>) – file compatible stream object to which the archive will be written as bytes</p></li>
+<li><p><strong>treeish</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – is the treeish name/id, defaults to active branch</p></li>
+<li><p><strong>prefix</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – is the optional prefix to prepend to each filename in the archive</p></li>
+<li><p><strong>kwargs</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – <p>Additional arguments passed to git-archive</p>
+<ul>
+<li><p>Use the ‘format’ argument to define the kind of format. Use
+specialized ostreams to write any format supported by python.</p></li>
+<li><p>You may specify the special <strong>path</strong> keyword, which may either be a repository-relative
+path to a directory or file to place into the archive, or a list or tuple of multiple paths.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>GitCommandError</strong> – in case something went wrong</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>self</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.bare">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bare</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.bare" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the repository is bare</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.blame">
+<span class="sig-name descname"><span class="pre">blame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">incremental</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rev_opts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.blame" title="Link to this definition">¶</a></dt>
+<dd><p>The blame information for the given file at the given revision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rev</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">HEAD</span></code>]</span>) – revision specifier, see git-rev-parse for viable options.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]]], <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">BlameEntry</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list: [git.Commit, list: [&lt;line&gt;]]
+A list of lists associating a Commit object with a list of lines that
+changed within the given commit. The Commit objects will be given in order
+of appearance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.blame_incremental">
+<span class="sig-name descname"><span class="pre">blame_incremental</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.blame_incremental" title="Link to this definition">¶</a></dt>
+<dd><p>Iterator for blame information for the given file at the given revision.</p>
+<p>Unlike .blame(), this does not return the actual file’s contents, only
+a stream of BlameEntry tuples.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rev</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">HEAD</span></code></span>) – revision specifier, see git-rev-parse for viable options.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">BlameEntry</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>lazy iterator of BlameEntry tuples, where the commit
+indicates the commit to blame for the line, and range
+indicates a span of line numbers in the resulting file.</p>
+</dd>
+</dl>
+<p>If you combine all line number ranges outputted by this command, you
+should get a continuous range spanning all line numbers in the file.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.branches">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">branches</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Head</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.branches" title="Link to this definition">¶</a></dt>
+<dd><p>A list of <code class="docutils literal notranslate"><span class="pre">Head</span></code> objects representing the branch heads in
+this repo</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.IterableList(Head,</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unsafe_protocols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unsafe_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.clone" title="Link to this definition">¶</a></dt>
+<dd><p>Create a clone from this repository.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span>) – is the full path of the new repo (traditionally ends with ./&lt;name&gt;.git).</p></li>
+<li><p><strong>progress</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]]</span>) – See ‘git.remote.Remote.push’.</p></li>
+<li><p><strong>multi_options</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span>) – A list of Clone options that can be provided multiple times.  One
+option per list item which is passed exactly as specified to clone.
+For example [’–config core.filemode=false’, ‘–config core.ignorecase’,
+‘–recurse-submodule=repo1_path’, ‘–recurse-submodule=repo2_path’]</p></li>
+<li><p><strong>allow_unsafe_protocols</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – Allow unsafe protocols to be used, like ext</p></li>
+<li><p><strong>allow_unsafe_options</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – Allow unsafe options to be used, like –upload-pack</p></li>
+<li><p><strong>kwargs</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – <ul>
+<li><p>odbt = ObjectDatabase Type, allowing to determine the object database
+implementation used by the returned Repo instance</p></li>
+<li><p>All remaining keyword arguments are given to the git-clone command</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.Repo</span></code> (the newly cloned repo)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.clone_from">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">clone_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multi_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unsafe_protocols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_unsafe_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.clone_from" title="Link to this definition">¶</a></dt>
+<dd><p>Create a clone from the given URL</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span>) – valid git url, see <a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-clone.html#URLS">http://www.kernel.org/pub/software/scm/git/docs/git-clone.html#URLS</a></p></li>
+<li><p><strong>to_path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span>) – Path to which the repository should be cloned to</p></li>
+<li><p><strong>progress</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]]</span>) – See ‘git.remote.Remote.push’.</p></li>
+<li><p><strong>env</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span>) – Optional dictionary containing the desired environment variables.
+Note: Provided variables will be used to update the execution
+environment for <cite>git</cite>. If some variable is not specified in <cite>env</cite>
+and is defined in <cite>os.environ</cite>, value from <cite>os.environ</cite> will be used.
+If you want to unset some variable, consider providing empty string
+as its value.</p></li>
+<li><p><strong>multi_options</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span>) – See <code class="docutils literal notranslate"><span class="pre">clone</span></code> method</p></li>
+<li><p><strong>allow_unsafe_protocols</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – Allow unsafe protocols to be used, like ext</p></li>
+<li><p><strong>allow_unsafe_options</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – Allow unsafe options to be used, like –upload-pack</p></li>
+<li><p><strong>kwargs</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – see the <code class="docutils literal notranslate"><span class="pre">clone</span></code> method</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Repo instance pointing to the cloned directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.commit">
+<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.commit" title="Link to this definition">¶</a></dt>
+<dd><p>The Commit object for the specified revision</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rev</strong> (<span class="sphinx_autodoc_typehints-type">Union[str, Commit_ish, None]</span>) – revision specifier, see git-rev-parse for viable options.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type">Commit</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.Commit</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.common_dir">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">common_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.common_dir" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The git dir that holds everything except possibly HEAD,
+FETCH_HEAD, ORIG_HEAD, COMMIT_EDITMSG, index, and logs/.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.config_reader">
+<span class="sig-name descname"><span class="pre">config_reader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.config_reader" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">GitConfigParser</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>GitConfigParser allowing to read the full git configuration, but not to write it</p>
+<p>The configuration will include values from the system, user and repository
+configuration files.</p>
+</p>
+</dd>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config_level</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Literal</span></code>[<code class="docutils literal notranslate"><span class="pre">'system'</span></code>, <code class="docutils literal notranslate"><span class="pre">'global'</span></code>, <code class="docutils literal notranslate"><span class="pre">'user'</span></code>, <code class="docutils literal notranslate"><span class="pre">'repository'</span></code>]]</span>) – For possible values, see config_writer method
+If None, all applicable levels will be used. Specify a level in case
+you know which file you wish to read to prevent reading multiple files.</p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>On windows, system configuration cannot currently be read as the path is
+unknown, instead the global path will be used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.config_writer">
+<span class="sig-name descname"><span class="pre">config_writer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'repository'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.config_writer" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">GitConfigParser</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>GitConfigParser allowing to write values of the specified configuration file level.
+Config writers should be retrieved, used to change the configuration, and written
+right away as they will lock the configuration file in question and prevent other’s
+to write it.</p>
+</dd>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config_level</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Literal</span></code>[<code class="docutils literal notranslate"><span class="pre">'system'</span></code>, <code class="docutils literal notranslate"><span class="pre">'global'</span></code>, <code class="docutils literal notranslate"><span class="pre">'user'</span></code>, <code class="docutils literal notranslate"><span class="pre">'repository'</span></code>]</span>) – One of the following values
+system = system wide configuration file
+global = user level configuration file
+repository = configuration file for this repository only</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.create_head">
+<span class="sig-name descname"><span class="pre">create_head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">commit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'HEAD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logmsg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.create_head" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new head within the repository.
+For more documentation, please see the Head.create method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Head</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>newly created Head Reference</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.create_remote">
+<span class="sig-name descname"><span class="pre">create_remote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.create_remote" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new remote.</p>
+<p>For more information, please see the documentation of the Remote.create
+methods</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Remote</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Remote reference</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.create_submodule">
+<span class="sig-name descname"><span class="pre">create_submodule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.create_submodule" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new submodule</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>See the documentation of Submodule.add for a description of the
+applicable parameters</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Submodule</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>created submodules</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.create_tag">
+<span class="sig-name descname"><span class="pre">create_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'HEAD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.create_tag" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new tag reference.
+For more documentation, please see the TagReference.create method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">TagReference</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>TagReference object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.currently_rebasing_on">
+<span class="sig-name descname"><span class="pre">currently_rebasing_on</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.currently_rebasing_on" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The commit which is currently being replayed while rebasing.</p>
+</dd>
+</dl>
+<p>None if we are not currently rebasing.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.daemon_export">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">daemon_export</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.daemon_export" title="Link to this definition">¶</a></dt>
+<dd><p>If True, git-daemon may export this repository</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.delete_head">
+<span class="sig-name descname"><span class="pre">delete_head</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">heads</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.delete_head" title="Link to this definition">¶</a></dt>
+<dd><p>Delete the given heads</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kwargs</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – Additional keyword arguments to be passed to git-branch</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.delete_remote">
+<span class="sig-name descname"><span class="pre">delete_remote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">remote</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.delete_remote" title="Link to this definition">¶</a></dt>
+<dd><p>Delete the given remote.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.delete_tag">
+<span class="sig-name descname"><span class="pre">delete_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.delete_tag" title="Link to this definition">¶</a></dt>
+<dd><p>Delete the given tag references</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.description">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.description" title="Link to this definition">¶</a></dt>
+<dd><p>the project’s description</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.get_changed_files">
+<span class="sig-name descname"><span class="pre">get_changed_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_changed_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.get_changed_files" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of all files that have been changed since the last commit.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list: A list of file paths that have been changed since the last commit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.get_git_branch">
+<span class="sig-name descname"><span class="pre">get_git_branch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_git_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.get_git_branch" title="Link to this definition">¶</a></dt>
+<dd><p>Get the name of the currently active branch.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>str: The name of the active branch.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.get_git_hash">
+<span class="sig-name descname"><span class="pre">get_git_hash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_git_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.get_git_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Get the latest commit hash and message of the git repository.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>tuple: A tuple containing the latest commit hash (string) and the commit message (string).</p>
+</dd>
+<dt>Raises:</dt><dd><p>RuntimeError: If the repository is not a valid git repository.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.get_untracked_files">
+<span class="sig-name descname"><span class="pre">get_untracked_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_untracked_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.get_untracked_files" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of all untracked files in the repository.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list: A list of file paths that are untracked in the repository.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.has_separate_working_tree">
+<span class="sig-name descname"><span class="pre">has_separate_working_tree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.has_separate_working_tree" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if our git_dir is not at the root of our working_tree_dir, but a .git file with a
+platform agnositic symbolic link. Our git_dir will be wherever the .git file points to</p>
+</dd>
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bare repositories will always return False here</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.head">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">head</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">HEAD</span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.head" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HEAD Object pointing to the current head reference</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.heads">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heads</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Head</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.heads" title="Link to this definition">¶</a></dt>
+<dd><p>A list of <code class="docutils literal notranslate"><span class="pre">Head</span></code> objects representing the branch heads in
+this repo</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.IterableList(Head,</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.ignored">
+<span class="sig-name descname"><span class="pre">ignored</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">paths</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.ignored" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if paths are ignored via .gitignore
+Doing so using the “git check-ignore” method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>paths</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span>) – List of paths to check whether they are ignored or not</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>subset of those paths which are ignored</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.index">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">index</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IndexFile</span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.index" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IndexFile representing this repository’s index.</p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>This property can be expensive, as the returned <code class="docutils literal notranslate"><span class="pre">IndexFile</span></code> will be
+reinitialized. It’s recommended to re-use the object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.init">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mkdir=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">odbt=&lt;class</span> <span class="pre">'git.db.GitCmdObjectDB'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand_vars=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.init" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize a git repository at the given path if specified</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – is the full path to the repo (traditionally ends with /&lt;name&gt;.git)
+or None in which case the repository will be created in the current
+working directory</p></li>
+<li><p><strong>mkdir</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – if specified will create the repository directory if it doesn’t
+already exists. Creates the directory with a mode=0755.
+Only effective if a path is explicitly given</p></li>
+<li><p><strong>odbt</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">GitCmdObjectDB</span></code>]</span>) – Object DataBase type - a type which is constructed by providing
+the directory containing the database objects, i.e. .git/objects.
+It will be used to access all object data</p></li>
+<li><p><strong>expand_vars</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>) – if specified, environment variables will not be escaped. This
+can lead to information disclosure, allowing attackers to
+access the contents of environment variables</p></li>
+<li><p><strong>kwargs</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – keyword arguments serving as additional options to the git-init command</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Repo</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.Repo</span></code> (the newly created repo)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.is_ancestor">
+<span class="sig-name descname"><span class="pre">is_ancestor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ancestor_rev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rev</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.is_ancestor" title="Link to this definition">¶</a></dt>
+<dd><p>Check if a commit is an ancestor of another</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ancestor_rev</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code></span>) – Rev which should be an ancestor</p></li>
+<li><p><strong>rev</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code></span>) – Rev to test against ancestor_rev</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code>, ancestor_rev is an ancestor to rev.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.is_dirty">
+<span class="sig-name descname"><span class="pre">is_dirty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">untracked_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">submodules</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.is_dirty" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code>, the repository is considered dirty. By default it will react
+like a git-status without untracked files, hence it is dirty if the
+index or the working copy have changes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.iter_commits">
+<span class="sig-name descname"><span class="pre">iter_commits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.iter_commits" title="Link to this definition">¶</a></dt>
+<dd><p>A list of Commit objects representing the history of a given ref/commit</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rev</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">SymbolicReference</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – revision specifier, see git-rev-parse for viable options.
+If None, the active branch will be used.</p></li>
+<li><p><strong>paths</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]]]</span>) – is an optional path or a list of paths; if set only commits that include the path
+or paths will be returned</p></li>
+<li><p><strong>kwargs</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>) – Arguments to be passed to git-rev-list - common ones are
+max_count and skip</p></li>
+</ul>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>to receive only commits between two named revisions, use the
+“revA…revB” revision specifier</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code>]</span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">git.Commit[]</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.iter_submodules">
+<span class="sig-name descname"><span class="pre">iter_submodules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.iter_submodules" title="Link to this definition">¶</a></dt>
+<dd><p>An iterator yielding Submodule instances, see Traversable interface
+for a description of args and kwargs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Submodule</span></code>]</span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Iterator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.iter_trees">
+<span class="sig-name descname"><span class="pre">iter_trees</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.iter_trees" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Tree</span></code>]</span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Iterator yielding Tree objects</p>
+</dd>
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Takes all arguments known to iter_commits method</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.merge_base">
+<span class="sig-name descname"><span class="pre">merge_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">rev</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.merge_base" title="Link to this definition">¶</a></dt>
+<dd><p>Find the closest common ancestor for the given revision (e.g. Commits, Tags, References, etc)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rev</strong> (<span class="sphinx_autodoc_typehints-type">TBD</span>) – At least two revs to find the common ancestor for.</p></li>
+<li><p><strong>kwargs</strong> (<span class="sphinx_autodoc_typehints-type">Any</span>) – Additional arguments to be passed to the repo.git.merge_base() command which does all the work.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type">List[Union[Commit_ish, None]]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of Commit objects. If –all was not specified as kwarg, the list will have at max one Commit,
+or is empty if no common merge base exists.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If not at least two revs are provided</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.references">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">references</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Reference</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.references" title="Link to this definition">¶</a></dt>
+<dd><p>A list of Reference objects representing tags, heads and remote references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IterableList(Reference, …)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.refs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">refs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Reference</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.refs" title="Link to this definition">¶</a></dt>
+<dd><p>A list of Reference objects representing tags, heads and remote references.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>IterableList(Reference, …)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.remote">
+<span class="sig-name descname"><span class="pre">remote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'origin'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.remote" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Remote</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Remote with the specified name</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if no remote with such a name exists</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.remotes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">remotes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Remote</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.remotes" title="Link to this definition">¶</a></dt>
+<dd><p>A list of Remote objects allowing to access and manipulate remotes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.IterableList(Remote,</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.rev_parse">
+<span class="sig-name descname"><span class="pre">rev_parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.rev_parse" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TagReference</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Tree</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Blob</span></code>]</span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Object at the given revision, either Commit, Tag, Tree or Blob</p>
+</dd>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rev</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – git-rev-parse compatible revision specification as string, please see
+<a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/git-rev-parse.html">http://www.kernel.org/pub/software/scm/git/docs/git-rev-parse.html</a>
+for details</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>BadObject</strong> – if the given revision could not be found</p></li>
+<li><p><strong>ValueError</strong> – If rev couldn’t be parsed</p></li>
+<li><p><strong>IndexError</strong> – If invalid reflog index is specified</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.submodule">
+<span class="sig-name descname"><span class="pre">submodule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.submodule" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Submodule</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Submodule with the given name</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If no such submodule exists</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.submodule_update">
+<span class="sig-name descname"><span class="pre">submodule_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.submodule_update" title="Link to this definition">¶</a></dt>
+<dd><p>Update the submodules, keeping the repository consistent as it will
+take the previous state into consideration. For more information, please
+see the documentation of RootModule.update</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Submodule</span></code>]</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.submodules">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">submodules</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">Submodule</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.submodules" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>git.IterableList(Submodule, …) of direct submodules
+available from the current head</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.tag" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">TagReference</span></code></span></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>TagReference Object, reference pointing to a Commit or Tag</p>
+</dd>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span>) – path to the tag reference, i.e. 0.1.5 or tags/0.1.5</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.tags">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IterableList</span><span class="p"><span class="pre">[</span></span><span class="pre">TagReference</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.tags" title="Link to this definition">¶</a></dt>
+<dd><p>A list of <code class="docutils literal notranslate"><span class="pre">Tag</span></code> objects that are available in this repo</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.IterableList(TagReference,</span> <span class="pre">...)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.tree">
+<span class="sig-name descname"><span class="pre">tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.tree" title="Link to this definition">¶</a></dt>
+<dd><p>The Tree object for the given treeish revision
+Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repo</span><span class="o">.</span><span class="n">tree</span><span class="p">(</span><span class="n">repo</span><span class="o">.</span><span class="n">heads</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rev</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Commit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Tree</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>]</span>) – is a revision pointing to a Treeish ( being a commit or tree )</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Tree</span></code></span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">git.Tree</span></code></p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>If you need a non-root level tree, find it by iterating the root tree. Otherwise
+it cannot know about its path relative to the repository root and subsequent
+operations might have unexpected results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.untracked_files">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">untracked_files</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.untracked_files" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>list(str,…)</p>
+<p>Files currently untracked as they have not been staged yet. Paths
+are relative to the current working directory of the git command.</p>
+</p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>ignored files will not appear here, i.e. files mentioned in .gitignore</p>
+</dd>
+<dt class="field-odd">Note<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This property is expensive, as no cache is involved. To process the result, please
+consider caching it yourself.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.working_tree_dir">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">working_tree_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.working_tree_dir" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The working tree directory of our git repository. If this is a bare repository, None is returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, oslab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
