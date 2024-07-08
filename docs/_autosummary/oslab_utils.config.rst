@@ -2,7 +2,7 @@ oslab\_utils.config
 ===================
 
 .. automodule:: oslab_utils.config
-
+   :members:
    
    
    

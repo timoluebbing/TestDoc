@@ -49,6 +49,19 @@
 <li class="toctree-l2"><a class="reference internal" href="oslab_utils.config.html">oslab_utils.config</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">oslab_utils.git_utils</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="oslab_utils.git_utils.CustomRepo.html">oslab_utils.git_utils.CustomRepo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo"><code class="docutils literal notranslate"><span class="pre">CustomRepo</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.None"><code class="docutils literal notranslate"><span class="pre">CustomRepo.None</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.get_git_hash"><code class="docutils literal notranslate"><span class="pre">CustomRepo.get_git_hash()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.get_git_branch"><code class="docutils literal notranslate"><span class="pre">CustomRepo.get_git_branch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.get_changed_files"><code class="docutils literal notranslate"><span class="pre">CustomRepo.get_changed_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.get_untracked_files"><code class="docutils literal notranslate"><span class="pre">CustomRepo.get_untracked_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo.commit_current_state"><code class="docutils literal notranslate"><span class="pre">CustomRepo.commit_current_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">CustomRepo.get_changed_files()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">CustomRepo.get_git_branch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">CustomRepo.get_git_hash()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">CustomRepo.get_untracked_files()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="oslab_utils.triangulation.html">oslab_utils.triangulation</a></li>
@@ -87,11 +100,164 @@
 <p class="rubric">Classes</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="oslab_utils.git_utils.CustomRepo.html#oslab_utils.git_utils.CustomRepo" title="oslab_utils.git_utils.CustomRepo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CustomRepo</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.git_utils.CustomRepo" title="oslab_utils.git_utils.CustomRepo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CustomRepo</span></code></a></p></td>
 <td><p>Customize the Repo class from gitpython for easier access/use.</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py class">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">oslab_utils.git_utils.</span></span><span class="sig-name descname"><span class="pre">CustomRepo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo" title="Link to this definition">¶</a></dt>
+<dd><p>Customize the Repo class from gitpython for easier access/use.</p>
+<p>This class extends the base class <cite>Repo</cite> from gitpython and provides additional methods
+for easier access and use of a git repository.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>repo_path</strong> (<em>str</em>) – The path to the git repository.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If the <cite>repo_path</cite> is not a valid directory or a git repository.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.None">
+<span class="sig-name descname"><span class="pre">None</span></span><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.None" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.get_git_hash">
+<span class="sig-name descname"><span class="pre">get_git_hash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_git_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.get_git_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Get the latest commit hash and message of the git repository.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.get_git_branch">
+<span class="sig-name descname"><span class="pre">get_git_branch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_git_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.get_git_branch" title="Link to this definition">¶</a></dt>
+<dd><p>Get the name of the currently active branch.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.get_changed_files">
+<span class="sig-name descname"><span class="pre">get_changed_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_changed_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.get_changed_files" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of all files that have been changed since the last commit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.get_untracked_files">
+<span class="sig-name descname"><span class="pre">get_untracked_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_untracked_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.get_untracked_files" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of all untracked files in the repository.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="oslab_utils.git_utils.CustomRepo.commit_current_state">
+<span class="sig-name descname"><span class="pre">commit_current_state</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.commit_current_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.git_utils.CustomRepo.commit_current_state" title="Link to this definition">¶</a></dt>
+<dd><p>Commit the current state of the repository.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>Documentation of the base class <cite>Repo</cite>: <a class="reference external" href="https://gitpython.readthedocs.io/en/stable/index.html">https://gitpython.readthedocs.io/en/stable/index.html</a></p></li>
+</ul>
+</div>
+<p>Create a new Repo instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – <p>the path to either the root git directory or the bare git repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;/Users/mtrier/Development/git-python&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;/Users/mtrier/Development/git-python.git&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;~/Development/git-python.git&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;$REPOSITORIES/Development/git-python.git&quot;</span><span class="p">)</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">Repo</span><span class="p">(</span><span class="s2">&quot;C:\Users\mtrier\Development\git-python\.git&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul>
+<li><p>In <em>Cygwin</em>, path may be a <cite>‘cygdrive/…’</cite> prefixed path.</p></li>
+<li><p>If it evaluates to false, <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">GIT_DIR</span></code> is used, and if this also evals to false,
+the current-directory is used.</p></li>
+</ul>
+</p></li>
+<li><p><strong>odbt</strong> – Object DataBase type - a type which is constructed by providing
+the directory containing the database objects, i.e. .git/objects. It will
+be used to access all object data</p></li>
+<li><p><strong>search_parent_directories</strong> – <p>if True, all parent directories will be searched for a valid repo as well.</p>
+<p>Please note that this was the default behaviour in older versions of GitPython,
+which is considered a bug though.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>InvalidGitRepositoryError</strong> – </p></li>
+<li><p><strong>NoSuchPathError</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>git.Repo</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">get_changed_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_changed_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of all files that have been changed since the last commit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of file paths that have been changed since the last commit.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">get_git_branch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_git_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd><p>Get the name of the currently active branch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the active branch.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">get_git_hash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_git_hash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dd><p>Get the latest commit hash and message of the git repository.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing the latest commit hash (string) and the commit message (string).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – If the repository is not a valid git repository.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">get_untracked_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/git_utils.html#CustomRepo.get_untracked_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
+<dd><p>Get a list of all untracked files in the repository.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of file paths that are untracked in the repository.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 

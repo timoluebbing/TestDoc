@@ -51,6 +51,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">oslab_utils.triangulation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="oslab_utils.triangulation.triangulate_stereo.html">oslab_utils.triangulation.triangulate_stereo</a></li>
 <li class="toctree-l3"><a class="reference internal" href="oslab_utils.triangulation.undistort_points_pinhole.html">oslab_utils.triangulation.undistort_points_pinhole</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oslab_utils.triangulation.triangulate_stereo"><code class="docutils literal notranslate"><span class="pre">triangulate_stereo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oslab_utils.triangulation.undistort_points_pinhole"><code class="docutils literal notranslate"><span class="pre">undistort_points_pinhole()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -87,14 +89,57 @@
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="oslab_utils.triangulation.triangulate_stereo.html#oslab_utils.triangulation.triangulate_stereo" title="oslab_utils.triangulation.triangulate_stereo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">triangulate_stereo</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.triangulation.triangulate_stereo" title="oslab_utils.triangulation.triangulate_stereo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">triangulate_stereo</span></code></a></p></td>
 <td><p>Triangulates the 3D position of points in Euclidean coordinates from two camera views.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="oslab_utils.triangulation.undistort_points_pinhole.html#oslab_utils.triangulation.undistort_points_pinhole" title="oslab_utils.triangulation.undistort_points_pinhole"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undistort_points_pinhole</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.triangulation.undistort_points_pinhole" title="oslab_utils.triangulation.undistort_points_pinhole"><code class="xref py py-obj docutils literal notranslate"><span class="pre">undistort_points_pinhole</span></code></a></p></td>
 <td><p>Undistorts the given points based on intrinsics and distortions parameters.</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py function">
+<dt class="sig sig-object py" id="oslab_utils.triangulation.triangulate_stereo">
+<span class="sig-prename descclassname"><span class="pre">oslab_utils.triangulation.</span></span><span class="sig-name descname"><span class="pre">triangulate_stereo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection_matrix1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection_matrix2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undistorted_points1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undistorted_points2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/triangulation.html#triangulate_stereo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.triangulation.triangulate_stereo" title="Link to this definition">¶</a></dt>
+<dd><p>Triangulates the 3D position of points in Euclidean coordinates from two camera views.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>projection_matrix1</strong> (<em>np.array</em>) – Projection matrix of the first camera.</p></li>
+<li><p><strong>projection_matrix2</strong> (<em>np.array</em>) – Projection matrix of the second camera.</p></li>
+<li><p><strong>undistorted_points1</strong> (<em>np.array</em>) – Coordinates of undistorted points from camera 1.</p></li>
+<li><p><strong>undistorted_points2</strong> (<em>np.array</em>) – Coordinates of undistorted points from camera 2.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The 3D position of points in Euclidean coordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="oslab_utils.triangulation.undistort_points_pinhole">
+<span class="sig-prename descclassname"><span class="pre">oslab_utils.triangulation.</span></span><span class="sig-name descname"><span class="pre">undistort_points_pinhole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intrinsics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distortions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/triangulation.html#undistort_points_pinhole"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.triangulation.undistort_points_pinhole" title="Link to this definition">¶</a></dt>
+<dd><p>Undistorts the given points based on intrinsics and distortions parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point_coords</strong> (<em>np.array</em>) – The x and y values of the points.</p></li>
+<li><p><strong>intrinsics</strong> (<em>np.array</em>) – The intrinsics matrix.</p></li>
+<li><p><strong>distortions</strong> (<em>np.array</em>) – The distortions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The undistorted 2D point coordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 

@@ -1,0 +1,31 @@
+detectors.retrieve
+==================
+
+.. automodule:: detectors.retrieve
+   :members:
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   detectors.retrieve.bm25
+   detectors.retrieve.colBERT
+

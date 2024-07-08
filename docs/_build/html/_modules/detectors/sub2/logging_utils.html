@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>detectors.sub2.logging_utils &mdash; NICE Toolbox 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/readthedocs-custom.css?v=9a3201e5" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            NICE Toolbox
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_autosummary/oslab_utils.html">Oslab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_autosummary/detectors.html">API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">NICE Toolbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">detectors.sub2.logging_utils</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for detectors.sub2.logging_utils</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">oslab_utils.config</span> <span class="kn">import</span> <span class="n">config_fill_auto</span><span class="p">,</span> <span class="n">save_config</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+
+
+<div class="viewcode-block" id="log_configs">
+<a class="viewcode-back" href="../../../_autosummary/detectors.sub2.logging_utils.log_configs.html#detectors.sub2.logging_utils.log_configs">[docs]</a>
+<span class="k">def</span> <span class="nf">log_configs</span><span class="p">(</span><span class="n">configs</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">out_folder</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;log_config&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Logs the configurations to a file.</span>
+
+<span class="sd">    The function takes in a dictionary of configurations, an output folder path, and an optional</span>
+<span class="sd">    file name. It fills in placeholders in the code_config dictionary with actual values using </span>
+<span class="sd">    the config_fill_auto function. Then, it constructs the log file path by joining the output </span>
+<span class="sd">    folder path and the file name with a .toml extension. After that, it updates the configs </span>
+<span class="sd">    dictionary with the filled code_config and saves the configurations to the log file using the</span>
+<span class="sd">    save_config function.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        configs (dict): A dictionary containing the configurations to be logged.</span>
+<span class="sd">        out_folder (str): The path to the output folder where the log file will be saved.</span>
+<span class="sd">        file_name (str, optional): The name of the log file. Defaults to &#39;log_config&#39;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">code_config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">user</span><span class="o">=</span><span class="s2">&quot;&lt;me&gt;&quot;</span><span class="p">,</span>
+            <span class="n">git_hash</span><span class="o">=</span><span class="s2">&quot;&lt;git_hash&gt;&quot;</span><span class="p">,</span>
+            <span class="n">commit_message</span><span class="o">=</span><span class="s2">&quot;&lt;commit_message&gt;&quot;</span><span class="p">,</span>
+            <span class="n">date</span><span class="o">=</span><span class="s2">&quot;&lt;today&gt;&quot;</span><span class="p">,</span>
+            <span class="n">time</span><span class="o">=</span><span class="s2">&quot;&lt;time&gt;&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># fill placeholders</span>
+    <span class="n">code_config</span> <span class="o">=</span> <span class="n">config_fill_auto</span><span class="p">(</span><span class="n">code_config</span><span class="p">)</span>
+
+    <span class="n">file_name</span> <span class="o">=</span> <span class="n">config_fill_auto</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">file_name</span><span class="p">))[</span><span class="s1">&#39;file&#39;</span><span class="p">]</span>
+    <span class="n">config_log_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.toml&quot;</span><span class="p">)</span>
+
+    <span class="n">configs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">code_config</span><span class="o">=</span><span class="n">code_config</span><span class="p">)</span>
+    <span class="n">save_config</span><span class="p">(</span><span class="n">configs</span><span class="p">,</span> <span class="n">config_log_file</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="setup_logging">
+<a class="viewcode-back" href="../../../_autosummary/detectors.sub2.logging_utils.setup_logging.html#detectors.sub2.logging_utils.setup_logging">[docs]</a>
+<span class="k">def</span> <span class="nf">setup_logging</span><span class="p">(</span><span class="n">log_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Start logger.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        log_path (str): The path to the log file.</span>
+<span class="sd">        level (int, optional): Determines from which level the logger will record the messages.</span>
+<span class="sd">            For instance, when the level is set as logging.INFO, the messages with a severity </span>
+<span class="sd">            below INFO (i.e. DEBUG) will be ignored.</span>
+<span class="sd">            The possible levels are:</span>
+<span class="sd">                - logging.DEBUG: Detailed information, typically of interest only when </span>
+<span class="sd">                diagnosing problems.</span>
+<span class="sd">                - logging.INFO: Confirmation that things are working as expected.</span>
+<span class="sd">                - logging.WARNING: An indication that something unexpected happened, or </span>
+<span class="sd">                indicative of some problem in the near future (e.g. &#39;disk space low&#39;).</span>
+<span class="sd">                    The software is still working as expected.</span>
+<span class="sd">                - logging.ERROR: Due to a more serious problem, the software has not been able </span>
+<span class="sd">                to perform some function.</span>
+<span class="sd">                - logging.CRITICAL: A serious error, indicating that the program itself may be </span>
+<span class="sd">                unable to continue running.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+        <span class="n">filename</span><span class="o">=</span><span class="n">log_path</span><span class="p">,</span> 
+        <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span> 
+        <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> [</span><span class="si">%(levelname)s</span><span class="s1">] </span><span class="si">%(module)s</span><span class="s1">.</span><span class="si">%(funcName)s</span><span class="s1">: </span><span class="si">%(message)s</span><span class="s1">&#39;</span>
+    <span class="p">)</span></div>
+
+
+<span class="c1"># def log_message(message, level=&quot;info&quot;):</span>
+<span class="c1">#     if level == &quot;debug&quot;:</span>
+<span class="c1">#         logging.debug(message)</span>
+<span class="c1">#     elif level == &quot;info&quot;:</span>
+<span class="c1">#         logging.info(message)</span>
+<span class="c1">#     elif level == &quot;warning&quot;:</span>
+<span class="c1">#         logging.warning(message)</span>
+<span class="c1">#     elif level == &quot;error&quot;:</span>
+<span class="c1">#         logging.error(message)</span>
+<span class="c1">#     elif level == &quot;critical&quot;:</span>
+<span class="c1">#         logging.critical(message)</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         logging.info(message)  # Default to info if no valid level is provided</span>
+
+<div class="viewcode-block" id="assert_and_log">
+<a class="viewcode-back" href="../../../_autosummary/detectors.sub2.logging_utils.assert_and_log.html#detectors.sub2.logging_utils.assert_and_log">[docs]</a>
+<span class="k">def</span> <span class="nf">assert_and_log</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Asserts a condition and logs an error message if the condition is not met.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        condition (bool): The condition to be checked.</span>
+<span class="sd">        message (str): The error message to be logged if the condition is not met.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        AssertionError: If the condition is not met.</span>
+<span class="sd">        SystemExit: If the condition is not met, the function will terminate the program with a status code of 1.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">condition</span><span class="p">,</span> <span class="n">message</span>
+    <span class="k">except</span> <span class="ne">AssertionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Assertion failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="LoggingSetup">
+<a class="viewcode-back" href="../../../_autosummary/detectors.sub2.logging_utils.LoggingSetup.html#detectors.sub2.logging_utils.LoggingSetup">[docs]</a>
+<span class="k">class</span> <span class="nc">LoggingSetup</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A class that provides utilities for setting up logging.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        tmp_log_path (str): The temporary path for the log file.</span>
+<span class="sd">        log_level (int): The log level to be set.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        tmp_log_path (str): The temporary path for the log file.</span>
+<span class="sd">        log_level (int): The log level to be set.</span>
+<span class="sd">        log_path (str): The final path for the log file.</span>
+
+<span class="sd">    Methods:</span>
+<span class="sd">        tmp_logging: A context manager that sets up logging and yields control.</span>
+<span class="sd">        set_path: Sets the final path for the log file.</span>
+<span class="sd">        set_level: Sets the log level.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmp_log_path</span><span class="p">,</span> <span class="n">log_level</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tmp_log_path</span> <span class="o">=</span> <span class="n">tmp_log_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="n">log_level</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_path</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="LoggingSetup.tmp_logging">
+<a class="viewcode-back" href="../../../_autosummary/detectors.sub2.logging_utils.LoggingSetup.html#detectors.sub2.logging_utils.LoggingSetup.tmp_logging">[docs]</a>
+    <span class="nd">@contextmanager</span>
+    <span class="k">def</span> <span class="nf">tmp_logging</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A context manager that sets up logging and yields control.</span>
+
+<span class="sd">        Yields:</span>
+<span class="sd">            None</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">setup_logging</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp_log_path</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">log_level</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Start logging to path </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp_log_path</span><span class="si">}</span><span class="s2"> with log &quot;</span>
+                      <span class="sa">f</span><span class="s2">&quot;level </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">log_level</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tmp_log_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_path</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_path</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_level</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;logging handler move not successful!&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LoggingSetup.set_path">
+<a class="viewcode-back" href="../../../_autosummary/detectors.sub2.logging_utils.LoggingSetup.html#detectors.sub2.logging_utils.LoggingSetup.set_path">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the final path for the log file.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AssertionError: If the number of logging handlers is not equal to 1.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">log_handlers</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">handlers</span>
+        <span class="n">assert_and_log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">log_handlers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>
+                       <span class="sa">f</span><span class="s1">&#39;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">log_handlers</span><span class="p">)</span><span class="si">}</span><span class="s1"> logging handlers, expected 1.&#39;</span><span class="p">)</span>
+        <span class="n">log_handlers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">setStream</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">log_path</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">handlers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">baseFilename</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_path</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully set the logging path to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">log_path</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to set the logging path to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">log_path</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LoggingSetup.set_level">
+<a class="viewcode-back" href="../../../_autosummary/detectors.sub2.logging_utils.LoggingSetup.html#detectors.sub2.logging_utils.LoggingSetup.set_level">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_level</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets the log level.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AssertionError: If the number of logging handlers is not equal to 1.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">log_handlers</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">handlers</span>
+        <span class="n">assert_and_log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">log_handlers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>
+                       <span class="sa">f</span><span class="s1">&#39;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">log_handlers</span><span class="p">)</span><span class="si">}</span><span class="s1"> logging handlers, expected 1.&#39;</span><span class="p">)</span>
+        <span class="n">log_handlers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">log_level</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">handlers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">level</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_level</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully set the log level to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">log_level</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to set the log level to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">log_level</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+</div>
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, oslab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

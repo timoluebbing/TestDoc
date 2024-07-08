@@ -51,6 +51,10 @@
 <li class="toctree-l3"><a class="reference internal" href="oslab_utils.config.config_fill_placeholders.html">oslab_utils.config.config_fill_placeholders</a></li>
 <li class="toctree-l3"><a class="reference internal" href="oslab_utils.config.load_config.html">oslab_utils.config.load_config</a></li>
 <li class="toctree-l3"><a class="reference internal" href="oslab_utils.config.save_config.html">oslab_utils.config.save_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oslab_utils.config.config_fill_auto"><code class="docutils literal notranslate"><span class="pre">config_fill_auto()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oslab_utils.config.config_fill_placeholders"><code class="docutils literal notranslate"><span class="pre">config_fill_placeholders()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oslab_utils.config.load_config"><code class="docutils literal notranslate"><span class="pre">load_config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#oslab_utils.config.save_config"><code class="docutils literal notranslate"><span class="pre">save_config()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="oslab_utils.git_utils.html">oslab_utils.git_utils</a></li>
@@ -93,20 +97,114 @@ path_config: &lt;pis_folder_path&gt; &lt;local_input_path&gt; &lt;local_output_p
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="oslab_utils.config.config_fill_auto.html#oslab_utils.config.config_fill_auto" title="oslab_utils.config.config_fill_auto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_fill_auto</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.config.config_fill_auto" title="oslab_utils.config.config_fill_auto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_fill_auto</span></code></a></p></td>
 <td><p>This function fills placeholders in the configuration data with auto-generated values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="oslab_utils.config.config_fill_placeholders.html#oslab_utils.config.config_fill_placeholders" title="oslab_utils.config.config_fill_placeholders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_fill_placeholders</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.config.config_fill_placeholders" title="oslab_utils.config.config_fill_placeholders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_fill_placeholders</span></code></a></p></td>
 <td><p>Replace placeholders in the given configuration data with their corresponding values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="oslab_utils.config.load_config.html#oslab_utils.config.load_config" title="oslab_utils.config.load_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_config</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.config.load_config" title="oslab_utils.config.load_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_config</span></code></a></p></td>
 <td><p>Load a configuration file in YAML or TOML format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="oslab_utils.config.save_config.html#oslab_utils.config.save_config" title="oslab_utils.config.save_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_config</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.config.save_config" title="oslab_utils.config.save_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_config</span></code></a></p></td>
 <td><p>Save the given configuration data to the specified file.</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="py function">
+<dt class="sig sig-object py" id="oslab_utils.config.config_fill_auto">
+<span class="sig-prename descclassname"><span class="pre">oslab_utils.config.</span></span><span class="sig-name descname"><span class="pre">config_fill_auto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/config.html#config_fill_auto"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.config.config_fill_auto" title="Link to this definition">¶</a></dt>
+<dd><p>This function fills placeholders in the configuration data with auto-generated values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>dict</em>) – The configuration data to be processed.</p></li>
+<li><p><strong>working_directory</strong> (<em>str</em><em>, </em><em>optional</em>) – The directory where the git repository is located.
+Defaults to the current working directory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The configuration data with placeholders replaced with auto-generated values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function uses the <cite>oslab_utils.git_utils</cite> module to get the git hash and commit
+message. The placeholders filled are: &lt;git_hash&gt;, &lt;commit_message&gt;, &lt;me&gt;, &lt;yyyymmdd&gt;,
+&lt;today&gt;, and &lt;time&gt;.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="oslab_utils.config.config_fill_placeholders">
+<span class="sig-prename descclassname"><span class="pre">oslab_utils.config.</span></span><span class="sig-name descname"><span class="pre">config_fill_placeholders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">placeholders</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/config.html#config_fill_placeholders"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.config.config_fill_placeholders" title="Link to this definition">¶</a></dt>
+<dd><p>Replace placeholders in the given configuration data with their corresponding values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>dict</em><em> or </em><em>list</em>) – The configuration data to be processed.</p></li>
+<li><p><strong>placeholders</strong> (<em>dict</em>) – A dictionary containing the placeholder values.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The configuration data with placeholders replaced.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="oslab_utils.config.load_config">
+<span class="sig-prename descclassname"><span class="pre">oslab_utils.config.</span></span><span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/oslab_utils/config.html#load_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.config.load_config" title="Link to this definition">¶</a></dt>
+<dd><p>Load a configuration file in YAML or TOML format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config_file</strong> (<em>str</em>) – The path to the configuration file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The configuration data loaded from the file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – If the file type is not supported.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the operating system is Windows, the paths in the configuration data will
+be converted to Windows format.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="oslab_utils.config.save_config">
+<span class="sig-prename descclassname"><span class="pre">oslab_utils.config.</span></span><span class="sig-name descname"><span class="pre">save_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="oslab_utils.git_utils.html#oslab_utils.git_utils.CustomRepo.None" title="oslab_utils.git_utils.CustomRepo.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/oslab_utils/config.html#save_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.config.save_config" title="Link to this definition">¶</a></dt>
+<dd><p>Save the given configuration data to the specified file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>configs</strong> (<em>dict</em>) – The configuration data to be saved.</p></li>
+<li><p><strong>config_file</strong> (<em>str</em>) – The path to the file where the configuration data will be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – If the file type is not supported.
+    Supported types are yaml/yml and toml.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the file type is Windows, it will convert the paths to Windows format.</p>
+</div>
+</dd></dl>
+
 </section>
 
 

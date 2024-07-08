@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>detectors.sub2.logging_utils.setup_logging &mdash; NICE Toolbox 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/readthedocs-custom.css?v=9a3201e5" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="detectors.sub2.logging_utils.LoggingSetup" href="detectors.sub2.logging_utils.LoggingSetup.html" />
+    <link rel="prev" title="detectors.sub2.logging_utils.log_configs" href="detectors.sub2.logging_utils.log_configs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            NICE Toolbox
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oslab_utils.html">Oslab</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="detectors.html">API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="detectors.sub1.html">detectors.sub1</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="detectors.sub2.html">detectors.sub2</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="detectors.sub2.logging_utils.html">detectors.sub2.logging_utils</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.assert_and_log.html">detectors.sub2.logging_utils.assert_and_log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.log_configs.html">detectors.sub2.logging_utils.log_configs</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">detectors.sub2.logging_utils.setup_logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.LoggingSetup.html">detectors.sub2.logging_utils.LoggingSetup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.html#detectors.sub2.logging_utils.LoggingSetup"><code class="docutils literal notranslate"><span class="pre">LoggingSetup</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.html#detectors.sub2.logging_utils.assert_and_log"><code class="docutils literal notranslate"><span class="pre">assert_and_log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.html#detectors.sub2.logging_utils.log_configs"><code class="docutils literal notranslate"><span class="pre">log_configs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.html#detectors.sub2.logging_utils.setup_logging"><code class="docutils literal notranslate"><span class="pre">setup_logging()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NICE Toolbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="detectors.html">detectors</a></li>
+          <li class="breadcrumb-item"><a href="detectors.sub2.html">detectors.sub2</a></li>
+          <li class="breadcrumb-item"><a href="detectors.sub2.logging_utils.html">detectors.sub2.logging_utils</a></li>
+      <li class="breadcrumb-item active">detectors.sub2.logging_utils.setup_logging</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="detectors-sub2-logging-utils-setup-logging">
+<h1>detectors.sub2.logging_utils.setup_logging<a class="headerlink" href="#detectors-sub2-logging-utils-setup-logging" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="detectors.sub2.logging_utils.setup_logging">
+<span class="sig-prename descclassname"><span class="pre">detectors.sub2.logging_utils.</span></span><span class="sig-name descname"><span class="pre">setup_logging</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="oslab_utils.git_utils.html#oslab_utils.git_utils.CustomRepo.None" title="oslab_utils.git_utils.CustomRepo.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/detectors/sub2/logging_utils.html#setup_logging"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#detectors.sub2.logging_utils.setup_logging" title="Link to this definition">¶</a></dt>
+<dd><p>Start logger.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>log_path</strong> (<em>str</em>) – The path to the log file.</p></li>
+<li><p><strong>level</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>Determines from which level the logger will record the messages.
+For instance, when the level is set as logging.INFO, the messages with a severity
+below INFO (i.e. DEBUG) will be ignored.
+The possible levels are:</p>
+<blockquote>
+<div><ul>
+<li><p>logging.DEBUG: Detailed information, typically of interest only when</p></li>
+</ul>
+<p>diagnosing problems.
+- logging.INFO: Confirmation that things are working as expected.
+- logging.WARNING: An indication that something unexpected happened, or
+indicative of some problem in the near future (e.g. ‘disk space low’).</p>
+<blockquote>
+<div><p>The software is still working as expected.</p>
+</div></blockquote>
+<ul>
+<li><p>logging.ERROR: Due to a more serious problem, the software has not been able</p></li>
+</ul>
+<p>to perform some function.
+- logging.CRITICAL: A serious error, indicating that the program itself may be
+unable to continue running.</p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="detectors.sub2.logging_utils.log_configs.html" class="btn btn-neutral float-left" title="detectors.sub2.logging_utils.log_configs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="detectors.sub2.logging_utils.LoggingSetup.html" class="btn btn-neutral float-right" title="detectors.sub2.logging_utils.LoggingSetup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, oslab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

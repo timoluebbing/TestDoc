@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>detectors.sub1.elan_parser.ElanParser &mdash; NICE Toolbox 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/readthedocs-custom.css?v=9a3201e5" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="detectors.sub2" href="detectors.sub2.html" />
+    <link rel="prev" title="detectors.sub1.elan_parser" href="detectors.sub1.elan_parser.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            NICE Toolbox
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oslab_utils.html">Oslab</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="detectors.html">API reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="detectors.sub1.html">detectors.sub1</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="detectors.sub1.elan_parser.html">detectors.sub1.elan_parser</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">detectors.sub1.elan_parser.ElanParser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="detectors.sub1.elan_parser.html#detectors.sub1.elan_parser.ElanParser"><code class="docutils literal notranslate"><span class="pre">ElanParser</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="detectors.sub2.html">detectors.sub2</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NICE Toolbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="detectors.html">detectors</a></li>
+          <li class="breadcrumb-item"><a href="detectors.sub1.html">detectors.sub1</a></li>
+          <li class="breadcrumb-item"><a href="detectors.sub1.elan_parser.html">detectors.sub1.elan_parser</a></li>
+      <li class="breadcrumb-item active">detectors.sub1.elan_parser.ElanParser</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="detectors-sub1-elan-parser-elanparser">
+<h1>detectors.sub1.elan_parser.ElanParser<a class="headerlink" href="#detectors-sub1-elan-parser-elanparser" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">detectors.sub1.elan_parser.</span></span><span class="sig-name descname"><span class="pre">ElanParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elan_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/detectors/sub1/elan_parser.html#ElanParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Eaf</span></code></p>
+<p>A class for parsing ELAN files and extracting annotation data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>elan_file</strong> (<em>str</em>) – The path to the ELAN file.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.elan_file">
+<span class="sig-name descname"><span class="pre">elan_file</span></span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.elan_file" title="Link to this definition">¶</a></dt>
+<dd><p>The path to the ELAN file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Construct either a new Eaf file or read on from a file/stream.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – Path to read from, - for stdin. If <code class="docutils literal notranslate"><span class="pre">None</span></code> an
+empty Eaf file will be created.</p></li>
+<li><p><strong>author</strong> (<em>str</em>) – Author of the file.</p></li>
+<li><p><strong>supress_version_warning</strong> (<em>bool</em>) – Suppress the warning for
+unsupported EAF file versions</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_annotation" title="detectors.sub1.elan_parser.ElanParser.add_annotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_annotation</span></code></a></p></td>
+<td><p>Add an annotation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_controlled_vocabulary" title="detectors.sub1.elan_parser.ElanParser.add_controlled_vocabulary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_controlled_vocabulary</span></code></a></p></td>
+<td><p>Add a controlled vocabulary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_cv_description" title="detectors.sub1.elan_parser.ElanParser.add_cv_description"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_cv_description</span></code></a></p></td>
+<td><p>Add a description to a controlled vocabulary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_cv_entry" title="detectors.sub1.elan_parser.ElanParser.add_cv_entry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_cv_entry</span></code></a></p></td>
+<td><p>Add an entry to a controlled vocabulary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_external_ref" title="detectors.sub1.elan_parser.ElanParser.add_external_ref"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_external_ref</span></code></a></p></td>
+<td><p>Add an external reference.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_language" title="detectors.sub1.elan_parser.ElanParser.add_language"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_language</span></code></a></p></td>
+<td><p>Add a language.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_lexicon_ref" title="detectors.sub1.elan_parser.ElanParser.add_lexicon_ref"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_lexicon_ref</span></code></a></p></td>
+<td><p>Add lexicon reference.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_license" title="detectors.sub1.elan_parser.ElanParser.add_license"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_license</span></code></a></p></td>
+<td><p>Add a license</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_linguistic_type" title="detectors.sub1.elan_parser.ElanParser.add_linguistic_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_linguistic_type</span></code></a></p></td>
+<td><p>Add a linguistic type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_linked_file" title="detectors.sub1.elan_parser.ElanParser.add_linked_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_linked_file</span></code></a></p></td>
+<td><p>Add a linked file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_locale" title="detectors.sub1.elan_parser.ElanParser.add_locale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_locale</span></code></a></p></td>
+<td><p>Add a locale.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_property" title="detectors.sub1.elan_parser.ElanParser.add_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_property</span></code></a></p></td>
+<td><p>Add a property</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_ref_annotation" title="detectors.sub1.elan_parser.ElanParser.add_ref_annotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_ref_annotation</span></code></a></p></td>
+<td><p>Add a reference annotation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_secondary_linked_file" title="detectors.sub1.elan_parser.ElanParser.add_secondary_linked_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_secondary_linked_file</span></code></a></p></td>
+<td><p>Add a secondary linked file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_tier" title="detectors.sub1.elan_parser.ElanParser.add_tier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_tier</span></code></a></p></td>
+<td><p>Add a tier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.child_tiers_for" title="detectors.sub1.elan_parser.ElanParser.child_tiers_for"><code class="xref py py-obj docutils literal notranslate"><span class="pre">child_tiers_for</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.clean_time_slots" title="detectors.sub1.elan_parser.ElanParser.clean_time_slots"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_time_slots</span></code></a></p></td>
+<td><p>Clean up all unused timeslots.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.copy_tier" title="detectors.sub1.elan_parser.ElanParser.copy_tier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy_tier</span></code></a></p></td>
+<td><p>Copies a tier to another <code class="xref py py-class docutils literal notranslate"><span class="pre">pympi.Elan.Eaf</span></code> object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.create_annotation_data_between_times" title="detectors.sub1.elan_parser.ElanParser.create_annotation_data_between_times"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_annotation_data_between_times</span></code></a></p></td>
+<td><p>Create a dictionary of annotation data for all tiers between the given start and end times.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.create_gaps_and_overlaps_tier" title="detectors.sub1.elan_parser.ElanParser.create_gaps_and_overlaps_tier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_gaps_and_overlaps_tier</span></code></a></p></td>
+<td><p>Create a tier with the gaps and overlaps of the annotations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.extract" title="detectors.sub1.elan_parser.ElanParser.extract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract</span></code></a></p></td>
+<td><p>Extracts the selected time frame as a new object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.filter_annotations" title="detectors.sub1.elan_parser.ElanParser.filter_annotations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_annotations</span></code></a></p></td>
+<td><p>Filter annotations in a tier using an exclusive and/or inclusive filter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.generate_annotation_id" title="detectors.sub1.elan_parser.ElanParser.generate_annotation_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_annotation_id</span></code></a></p></td>
+<td><p>Generate the next annotation id, this function is mainly used internally.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.generate_ts_id" title="detectors.sub1.elan_parser.ElanParser.generate_ts_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_ts_id</span></code></a></p></td>
+<td><p>Generate the next timeslot id, this function is mainly used internally</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_annotation_data_after_time" title="detectors.sub1.elan_parser.ElanParser.get_annotation_data_after_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_annotation_data_after_time</span></code></a></p></td>
+<td><p>Give the annotation before a given time.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_annotation_data_at_time" title="detectors.sub1.elan_parser.ElanParser.get_annotation_data_at_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_annotation_data_at_time</span></code></a></p></td>
+<td><p>Give the annotations at the given time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_annotation_data_before_time" title="detectors.sub1.elan_parser.ElanParser.get_annotation_data_before_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_annotation_data_before_time</span></code></a></p></td>
+<td><p>Give the annotation before a given time.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_annotation_data_between_times" title="detectors.sub1.elan_parser.ElanParser.get_annotation_data_between_times"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_annotation_data_between_times</span></code></a></p></td>
+<td><p>Get the annotation data for a specific tier between the given start and end times.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_annotation_data_for_tier" title="detectors.sub1.elan_parser.ElanParser.get_annotation_data_for_tier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_annotation_data_for_tier</span></code></a></p></td>
+<td><p>Gives a list of annotations of the form: <code class="docutils literal notranslate"><span class="pre">(begin,</span> <span class="pre">end,</span> <span class="pre">value)</span></code> When the tier contains reference annotations this will be returned, check <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_for_tier" title="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_for_tier"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_ref_annotation_data_for_tier()</span></code></a> for the format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_child_tiers_for" title="detectors.sub1.elan_parser.ElanParser.get_child_tiers_for"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_child_tiers_for</span></code></a></p></td>
+<td><p>Give all child tiers for a tier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_controlled_vocabulary_names" title="detectors.sub1.elan_parser.ElanParser.get_controlled_vocabulary_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_controlled_vocabulary_names</span></code></a></p></td>
+<td><p>Gives all the controlled vocabulary names</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_cv_descriptions" title="detectors.sub1.elan_parser.ElanParser.get_cv_descriptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_cv_descriptions</span></code></a></p></td>
+<td><p>Gives all the controlled vocabulary descriptions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_cv_entries" title="detectors.sub1.elan_parser.ElanParser.get_cv_entries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_cv_entries</span></code></a></p></td>
+<td><p>Gives all the controlled vocabulary entries names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_external_ref" title="detectors.sub1.elan_parser.ElanParser.get_external_ref"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_external_ref</span></code></a></p></td>
+<td><p>Give the external reference matching the id.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_external_ref_names" title="detectors.sub1.elan_parser.ElanParser.get_external_ref_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_external_ref_names</span></code></a></p></td>
+<td><p>Gives all the external reference names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_full_time_interval" title="detectors.sub1.elan_parser.ElanParser.get_full_time_interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_full_time_interval</span></code></a></p></td>
+<td><p>Get the full time interval of the ELAN file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps" title="detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_gaps_and_overlaps</span></code></a></p></td>
+<td><p>Give gaps and overlaps.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps2" title="detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_gaps_and_overlaps2</span></code></a></p></td>
+<td><p>Faster variant of <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps" title="detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_gaps_and_overlaps()</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_languages" title="detectors.sub1.elan_parser.ElanParser.get_languages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_languages</span></code></a></p></td>
+<td><p>Gives all the languages in the format: <code class="docutils literal notranslate"><span class="pre">{lang_id</span> <span class="pre">-&gt;</span> <span class="pre">(lang_def,</span> <span class="pre">lang_label)}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_lexicon_ref" title="detectors.sub1.elan_parser.ElanParser.get_lexicon_ref"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_lexicon_ref</span></code></a></p></td>
+<td><p>Gives the lexicon reference.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_lexicon_ref_names" title="detectors.sub1.elan_parser.ElanParser.get_lexicon_ref_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_lexicon_ref_names</span></code></a></p></td>
+<td><p>Gives all the lexicon reference names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_licenses" title="detectors.sub1.elan_parser.ElanParser.get_licenses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_licenses</span></code></a></p></td>
+<td><p>Gives all the licenses in the format: <code class="docutils literal notranslate"><span class="pre">[(name,</span> <span class="pre">url)]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_linguistic_type_names" title="detectors.sub1.elan_parser.ElanParser.get_linguistic_type_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_linguistic_type_names</span></code></a></p></td>
+<td><p>Give a list of available linguistic types.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_linked_files" title="detectors.sub1.elan_parser.ElanParser.get_linked_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_linked_files</span></code></a></p></td>
+<td><p>Give all linked files.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_locales" title="detectors.sub1.elan_parser.ElanParser.get_locales"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_locales</span></code></a></p></td>
+<td><p>Gives all the locales in the format: <code class="docutils literal notranslate"><span class="pre">{language_code</span> <span class="pre">-&gt;</span> <span class="pre">(country_code,</span> <span class="pre">variant)}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_parameters_for_linguistic_type" title="detectors.sub1.elan_parser.ElanParser.get_parameters_for_linguistic_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parameters_for_linguistic_type</span></code></a></p></td>
+<td><p>Give the parameter dictionary, this is usable in <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_linguistic_type" title="detectors.sub1.elan_parser.ElanParser.add_linguistic_type"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_linguistic_type()</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_parameters_for_tier" title="detectors.sub1.elan_parser.ElanParser.get_parameters_for_tier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parameters_for_tier</span></code></a></p></td>
+<td><p>Give the parameter dictionary, this is useable in <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_tier" title="detectors.sub1.elan_parser.ElanParser.add_tier"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_tier()</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_parent_aligned_annotation" title="detectors.sub1.elan_parser.ElanParser.get_parent_aligned_annotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parent_aligned_annotation</span></code></a></p></td>
+<td><p>&quot; Give the aligment annotation that a reference annotation belongs to directly, or indirectly through other reference annotations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_properties" title="detectors.sub1.elan_parser.ElanParser.get_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_properties</span></code></a></p></td>
+<td><p>Gives all the properties in the format: <code class="docutils literal notranslate"><span class="pre">[(key,</span> <span class="pre">value)]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_at_time" title="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_at_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ref_annotation_at_time</span></code></a></p></td>
+<td><p>Give the ref annotations at the given time of the form <code class="docutils literal notranslate"><span class="pre">[(start,</span> <span class="pre">end,</span> <span class="pre">value,</span> <span class="pre">refvalue)]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_after_time" title="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_after_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ref_annotation_data_after_time</span></code></a></p></td>
+<td><p>Give the ref annotation after a time.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_before_time" title="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_before_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ref_annotation_data_before_time</span></code></a></p></td>
+<td><p>Give the ref annotation before a time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_between_times" title="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_between_times"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ref_annotation_data_between_times</span></code></a></p></td>
+<td><p>Give the ref annotations between times of the form <code class="docutils literal notranslate"><span class="pre">[(start,</span> <span class="pre">end,</span> <span class="pre">value,</span> <span class="pre">refvalue)]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_for_tier" title="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_for_tier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ref_annotation_data_for_tier</span></code></a></p></td>
+<td><p>&quot;Give a list of all reference annotations of the form: <code class="docutils literal notranslate"><span class="pre">[(start,</span> <span class="pre">end,</span> <span class="pre">value,</span> <span class="pre">refvalue)]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_secondary_linked_files" title="detectors.sub1.elan_parser.ElanParser.get_secondary_linked_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_secondary_linked_files</span></code></a></p></td>
+<td><p>Give all linked files.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_tier_ids_for_linguistic_type" title="detectors.sub1.elan_parser.ElanParser.get_tier_ids_for_linguistic_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_tier_ids_for_linguistic_type</span></code></a></p></td>
+<td><p>Give a list of all tiers matching a linguistic type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_tier_name" title="detectors.sub1.elan_parser.ElanParser.get_tier_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_tier_name</span></code></a></p></td>
+<td><p>Get the names of all tiers in the ELAN file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_tier_names" title="detectors.sub1.elan_parser.ElanParser.get_tier_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_tier_names</span></code></a></p></td>
+<td><p>List all the tier names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_unique_annotations" title="detectors.sub1.elan_parser.ElanParser.get_unique_annotations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_unique_annotations</span></code></a></p></td>
+<td><p>Get a dictionary of unique annotations for each tier.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.insert_annotation" title="detectors.sub1.elan_parser.ElanParser.insert_annotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert_annotation</span></code></a></p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.</span></p>
+</div>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.insert_ref_annotation" title="detectors.sub1.elan_parser.ElanParser.insert_ref_annotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert_ref_annotation</span></code></a></p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.</span></p>
+</div>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.merge_tiers" title="detectors.sub1.elan_parser.ElanParser.merge_tiers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_tiers</span></code></a></p></td>
+<td><p>Merge tiers into a new tier and when the gap is lower then the threshhold glue the annotations together.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_all_annotations_from_tier" title="detectors.sub1.elan_parser.ElanParser.remove_all_annotations_from_tier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_all_annotations_from_tier</span></code></a></p></td>
+<td><p>remove all annotations from a tier</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_annotation" title="detectors.sub1.elan_parser.ElanParser.remove_annotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_annotation</span></code></a></p></td>
+<td><p>Remove an annotation in a tier, if you need speed the best thing is to clean the timeslots after the last removal.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_controlled_vocabulary" title="detectors.sub1.elan_parser.ElanParser.remove_controlled_vocabulary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_controlled_vocabulary</span></code></a></p></td>
+<td><p>Remove a controlled vocabulary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_cv_description" title="detectors.sub1.elan_parser.ElanParser.remove_cv_description"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_cv_description</span></code></a></p></td>
+<td><p>Remove a controlled vocabulary description.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_cv_entry" title="detectors.sub1.elan_parser.ElanParser.remove_cv_entry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_cv_entry</span></code></a></p></td>
+<td><p>Remove a controlled vocabulary entry.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_external_ref" title="detectors.sub1.elan_parser.ElanParser.remove_external_ref"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_external_ref</span></code></a></p></td>
+<td><p>Remove an external reference.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_language" title="detectors.sub1.elan_parser.ElanParser.remove_language"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_language</span></code></a></p></td>
+<td><p>Remove the language mathing the id.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_lexicon_ref" title="detectors.sub1.elan_parser.ElanParser.remove_lexicon_ref"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_lexicon_ref</span></code></a></p></td>
+<td><p>Remove a lexicon reference matching the id.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_license" title="detectors.sub1.elan_parser.ElanParser.remove_license"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_license</span></code></a></p></td>
+<td><p>Remove all licenses matching both key and value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_linguistic_type" title="detectors.sub1.elan_parser.ElanParser.remove_linguistic_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_linguistic_type</span></code></a></p></td>
+<td><p>Remove a linguistic type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_linked_files" title="detectors.sub1.elan_parser.ElanParser.remove_linked_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_linked_files</span></code></a></p></td>
+<td><p>Remove all linked files that match all the criteria, criterias that are <code class="docutils literal notranslate"><span class="pre">None</span></code> are ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_locale" title="detectors.sub1.elan_parser.ElanParser.remove_locale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_locale</span></code></a></p></td>
+<td><p>Remove the locale matching the language code.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_property" title="detectors.sub1.elan_parser.ElanParser.remove_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_property</span></code></a></p></td>
+<td><p>Remove all properties matching both key and value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_ref_annotation" title="detectors.sub1.elan_parser.ElanParser.remove_ref_annotation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_ref_annotation</span></code></a></p></td>
+<td><p>Remove a reference annotation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_secondary_linked_files" title="detectors.sub1.elan_parser.ElanParser.remove_secondary_linked_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_secondary_linked_files</span></code></a></p></td>
+<td><p>Remove all secondary linked files that match all the criteria, criterias that are <code class="docutils literal notranslate"><span class="pre">None</span></code> are ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_tier" title="detectors.sub1.elan_parser.ElanParser.remove_tier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_tier</span></code></a></p></td>
+<td><p>Remove a tier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_tiers" title="detectors.sub1.elan_parser.ElanParser.remove_tiers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_tiers</span></code></a></p></td>
+<td><p>Remove multiple tiers, note that this is a lot faster then removing them individually because of the delayed cleaning of timeslots.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.rename_tier" title="detectors.sub1.elan_parser.ElanParser.rename_tier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_tier</span></code></a></p></td>
+<td><p>Rename a tier.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.shift_annotations" title="detectors.sub1.elan_parser.ElanParser.shift_annotations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift_annotations</span></code></a></p></td>
+<td><p>Shift all annotations in time.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.to_file" title="detectors.sub1.elan_parser.ElanParser.to_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_file</span></code></a></p></td>
+<td><p>Write the object to a file, if the file already exists a backup will be created with the <code class="docutils literal notranslate"><span class="pre">.bak</span></code> suffix.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.to_textgrid" title="detectors.sub1.elan_parser.ElanParser.to_textgrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_textgrid</span></code></a></p></td>
+<td><p>Convert the object to a <code class="xref py py-class docutils literal notranslate"><span class="pre">pympi.Praat.TextGrid</span></code> object.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONSTRAINTS</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ETYPES</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">MIMES</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_annotation">
+<span class="sig-name descname"><span class="pre">add_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">svg_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_annotation" title="Link to this definition">¶</a></dt>
+<dd><p>Add an annotation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – Start time of the annotation.</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – End time of the annotation.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Value of the annotation.</p></li>
+<li><p><strong>svg_ref</strong> (<em>str</em>) – Svg reference.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>KeyError</strong> – If the tier is non existent.</p></li>
+<li><p><strong>ValueError</strong> – If one of the values is negative or start is bigger
+then end or if the tiers already contains ref
+annotations.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_controlled_vocabulary">
+<span class="sig-name descname"><span class="pre">add_controlled_vocabulary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_controlled_vocabulary" title="Link to this definition">¶</a></dt>
+<dd><p>Add a controlled vocabulary. This will initialize the controlled
+vocabulary without entries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cv_id</strong> (<em>str</em>) – Name of the controlled vocabulary.</p></li>
+<li><p><strong>ext_ref</strong> (<em>str</em>) – External reference.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_cv_description">
+<span class="sig-name descname"><span class="pre">add_cv_description</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_cv_description" title="Link to this definition">¶</a></dt>
+<dd><p>Add a description to a controlled vocabulary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cv_id</strong> (<em>str</em>) – Name of the controlled vocabulary to add the
+description.</p></li>
+<li><p><strong>lang_ref</strong> (<em>str</em>) – Language reference.</p></li>
+<li><p><strong>description</strong> (<em>str</em>) – Description, this can be none.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no controlled vocabulary with that id.</p>
+</dd>
+<dt class="field-odd">Throws ValueError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the language provided doesn’t exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_cv_entry">
+<span class="sig-name descname"><span class="pre">add_cv_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cve_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_cv_entry" title="Link to this definition">¶</a></dt>
+<dd><p>Add an entry to a controlled vocabulary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cv_id</strong> (<em>str</em>) – Name of the controlled vocabulary to add an entry.</p></li>
+<li><p><strong>cve_id</strong> (<em>str</em>) – Name of the entry.</p></li>
+<li><p><strong>values</strong> (<em>list</em>) – List of values of the form:
+<code class="docutils literal notranslate"><span class="pre">(value,</span> <span class="pre">lang_ref,</span> <span class="pre">description)</span></code> where description can be
+<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>ext_ref</strong> (<em>str</em>) – External reference.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no controlled vocabulary with that id.</p>
+</dd>
+<dt class="field-odd">Throws ValueError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If a language in one of the entries doesn’t exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_external_ref">
+<span class="sig-name descname"><span class="pre">add_external_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_external_ref" title="Link to this definition">¶</a></dt>
+<dd><p>Add an external reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eid</strong> (<em>str</em>) – Name of the external reference.</p></li>
+<li><p><strong>etype</strong> (<em>str</em>) – Type of the external reference, has to be in
+<code class="docutils literal notranslate"><span class="pre">['iso12620',</span> <span class="pre">'ecv',</span> <span class="pre">'cve_id',</span> <span class="pre">'lexen_id',</span> <span class="pre">'resource_url']</span></code>.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Value of the external reference.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>if etype is not in the list of possible types.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_language">
+<span class="sig-name descname"><span class="pre">add_language</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lang_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang_def</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_language" title="Link to this definition">¶</a></dt>
+<dd><p>Add a language.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lang_id</strong> (<em>str</em>) – ID of the language.</p></li>
+<li><p><strong>lang_def</strong> (<em>str</em>) – Definition of the language(preferably ISO-639-3).</p></li>
+<li><p><strong>lang_label</strong> (<em>str</em>) – Label of the language.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_lexicon_ref">
+<span class="sig-name descname"><span class="pre">add_lexicon_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lrid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lrtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lexicon_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lexicon_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datcat_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datcat_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_lexicon_ref" title="Link to this definition">¶</a></dt>
+<dd><p>Add lexicon reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lrid</strong> (<em>str</em>) – Lexicon reference internal ID.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – Lexicon reference display name.</p></li>
+<li><p><strong>lrtype</strong> (<em>str</em>) – Lexicon reference service type.</p></li>
+<li><p><strong>url</strong> (<em>str</em>) – Lexicon reference service location</p></li>
+<li><p><strong>lexicon_id</strong> (<em>str</em>) – Lexicon reference service id.</p></li>
+<li><p><strong>lexicon_name</strong> (<em>str</em>) – Lexicon reference service name.</p></li>
+<li><p><strong>datacat_id</strong> (<em>str</em>) – Lexicon reference identifier of data category.</p></li>
+<li><p><strong>datacat_name</strong> (<em>str</em>) – Lexicon reference name of data category.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_license">
+<span class="sig-name descname"><span class="pre">add_license</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_license" title="Link to this definition">¶</a></dt>
+<dd><p>Add a license</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the license.</p></li>
+<li><p><strong>url</strong> (<em>str</em>) – URL of the license.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_linguistic_type">
+<span class="sig-name descname"><span class="pre">add_linguistic_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lingtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timealignable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphicreferences</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_linguistic_type" title="Link to this definition">¶</a></dt>
+<dd><p>Add a linguistic type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lingtype</strong> (<em>str</em>) – Name of the linguistic type.</p></li>
+<li><p><strong>constraints</strong> (<em>str</em>) – Constraint name.</p></li>
+<li><p><strong>timealignable</strong> (<em>bool</em>) – Flag for time alignable.</p></li>
+<li><p><strong>graphicreferences</strong> (<em>bool</em>) – Flag for graphic references.</p></li>
+<li><p><strong>extref</strong> (<em>str</em>) – External reference.</p></li>
+<li><p><strong>param_dict</strong> (<em>dict</em>) – TAG attributes, when this is not <code class="docutils literal notranslate"><span class="pre">None</span></code> it
+will ignore all other options. Please only use
+dictionaries coming from the
+<a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_parameters_for_linguistic_type" title="detectors.sub1.elan_parser.ElanParser.get_parameters_for_linguistic_type"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_parameters_for_linguistic_type()</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If a constraint is not defined</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_linked_file">
+<span class="sig-name descname"><span class="pre">add_linked_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mimetype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ex_from</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_linked_file" title="Link to this definition">¶</a></dt>
+<dd><p>Add a linked file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – Path of the file.</p></li>
+<li><p><strong>relpath</strong> (<em>str</em>) – Relative path of the file.</p></li>
+<li><p><strong>mimetype</strong> (<em>str</em>) – Mimetype of the file, if <code class="docutils literal notranslate"><span class="pre">None</span></code> it tries to
+guess it according to the file extension which currently only works
+for wav, mpg, mpeg and xml.</p></li>
+<li><p><strong>time_origin</strong> (<em>int</em>) – Time origin for the media file.</p></li>
+<li><p><strong>ex_from</strong> (<em>str</em>) – Extracted from field.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If mimetype had to be guessed and a non standard
+extension or an unknown mimetype.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_locale">
+<span class="sig-name descname"><span class="pre">add_locale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">language_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country_code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_locale" title="Link to this definition">¶</a></dt>
+<dd><p>Add a locale.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>language_code</strong> (<em>str</em>) – The language code of the locale.</p></li>
+<li><p><strong>country_code</strong> (<em>str</em>) – The country code of the locale.</p></li>
+<li><p><strong>variant</strong> (<em>str</em>) – The variant of the locale.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_property">
+<span class="sig-name descname"><span class="pre">add_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_property" title="Link to this definition">¶</a></dt>
+<dd><p>Add a property</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key of the property.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Value of the property.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_ref_annotation">
+<span class="sig-name descname"><span class="pre">add_ref_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">svg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_ref_annotation" title="Link to this definition">¶</a></dt>
+<dd><p>Add a reference annotation.
+.. note:: When a timepoint matches two annotations the new reference
+annotation will reference to the first annotation. To circumvent this
+it’s always safer to take the middle of the annotation you want to
+reference to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>tier2</strong> (<em>str</em>) – Tier of the referenced annotation.</p></li>
+<li><p><strong>time</strong> (<em>int</em>) – Time of the referenced annotation.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Value of the annotation.</p></li>
+<li><p><strong>prev</strong> (<em>str</em>) – Id of the previous annotation.</p></li>
+<li><p><strong>svg_ref</strong> (<em>str</em>) – Svg reference.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>KeyError</strong> – If the tier is non existent.</p></li>
+<li><p><strong>ValueError</strong> – If the tier already contains normal annotations or
+if there is no annotation in the tier on the time to reference to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_secondary_linked_file">
+<span class="sig-name descname"><span class="pre">add_secondary_linked_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mimetype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assoc_with</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_secondary_linked_file" title="Link to this definition">¶</a></dt>
+<dd><p>Add a secondary linked file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – Path of the file.</p></li>
+<li><p><strong>relpath</strong> (<em>str</em>) – Relative path of the file.</p></li>
+<li><p><strong>mimetype</strong> (<em>str</em>) – Mimetype of the file, if <code class="docutils literal notranslate"><span class="pre">None</span></code> it tries to
+guess it according to the file extension which currently only works
+for wav, mpg, mpeg and xml.</p></li>
+<li><p><strong>time_origin</strong> (<em>int</em>) – Time origin for the media file.</p></li>
+<li><p><strong>assoc_with</strong> (<em>str</em>) – Associated with field.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If mimetype had to be guessed and a non standard
+extension or an unknown mimetype.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.add_tier">
+<span class="sig-name descname"><span class="pre">add_tier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tier_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default-lt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ann</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">language</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.add_tier" title="Link to this definition">¶</a></dt>
+<dd><p>Add a tier. When no linguistic type is given and the default
+linguistic type is unavailable then the assigned linguistic type will
+be the first in the list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tier_id</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>ling</strong> (<em>str</em>) – Linguistic type, if the type is not available it will
+warn and pick the first available type.</p></li>
+<li><p><strong>parent</strong> (<em>str</em>) – Parent tier name.</p></li>
+<li><p><strong>locale</strong> (<em>str</em>) – Locale, if the locale is not present this option is
+ignored and the locale will not be set.</p></li>
+<li><p><strong>part</strong> (<em>str</em>) – Participant.</p></li>
+<li><p><strong>ann</strong> (<em>str</em>) – Annotator.</p></li>
+<li><p><strong>language</strong> (<em>str</em>) – Language , if the language is not present this
+option is ignored and the language will not be set.</p></li>
+<li><p><strong>tier_dict</strong> (<em>dict</em>) – TAG attributes, when this is not <code class="docutils literal notranslate"><span class="pre">None</span></code> it
+will ignore all other options. Please only use
+dictionaries coming from the
+<a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_parameters_for_tier" title="detectors.sub1.elan_parser.ElanParser.get_parameters_for_tier"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_parameters_for_tier()</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the tier_id is empty</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.child_tiers_for">
+<span class="sig-name descname"><span class="pre">child_tiers_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.child_tiers_for" title="Link to this definition">¶</a></dt>
+<dd><p>Use <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_child_tiers_for" title="detectors.sub1.elan_parser.ElanParser.get_child_tiers_for"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_child_tiers_for()</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.clean_time_slots">
+<span class="sig-name descname"><span class="pre">clean_time_slots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.clean_time_slots" title="Link to this definition">¶</a></dt>
+<dd><p>Clean up all unused timeslots.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This can and will take time for larger tiers.</p>
+</div>
+<p>When you want to do a lot of operations on a lot of tiers please unset
+the flags for cleaning in the functions so that the cleaning is only
+performed afterwards.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.copy_tier">
+<span class="sig-name descname"><span class="pre">copy_tier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eaf_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.copy_tier" title="Link to this definition">¶</a></dt>
+<dd><p>Copies a tier to another <code class="xref py py-class docutils literal notranslate"><span class="pre">pympi.Elan.Eaf</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eaf_obj</strong> (<em>pympi.Elan.Eaf</em>) – Target Eaf object.</p></li>
+<li><p><strong>tier_name</strong> (<em>str</em>) – Name of the tier.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the tier doesn’t exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.create_annotation_data_between_times">
+<span class="sig-name descname"><span class="pre">create_annotation_data_between_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/detectors/sub1/elan_parser.html#ElanParser.create_annotation_data_between_times"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.create_annotation_data_between_times" title="Link to this definition">¶</a></dt>
+<dd><p>Create a dictionary of annotation data for all tiers between the given start and end times.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>float</em>) – The start time.</p></li>
+<li><p><strong>end</strong> (<em>float</em>) – The end time.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary where the keys are tier names and the values are lists of annotation data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.create_gaps_and_overlaps_tier">
+<span class="sig-name descname"><span class="pre">create_gaps_and_overlaps_tier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tier1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxlen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.create_gaps_and_overlaps_tier" title="Link to this definition">¶</a></dt>
+<dd><p>Create a tier with the gaps and overlaps of the annotations.
+For types see <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps" title="detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_gaps_and_overlaps()</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tier1</strong> (<em>str</em>) – Name of the first tier.</p></li>
+<li><p><strong>tier2</strong> (<em>str</em>) – Name of the second tier.</p></li>
+<li><p><strong>tier_name</strong> (<em>str</em>) – Name of the new tier, if <code class="docutils literal notranslate"><span class="pre">None</span></code> the name will
+be generated.</p></li>
+<li><p><strong>maxlen</strong> (<em>int</em>) – Maximum length of gaps (skip longer ones), if <code class="docutils literal notranslate"><span class="pre">-1</span></code>
+no maximum will be used.</p></li>
+<li><p><strong>fast</strong> (<em>bool</em>) – Flag for using the fast method.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of gaps and overlaps of the form:
+<code class="docutils literal notranslate"><span class="pre">[(type,</span> <span class="pre">start,</span> <span class="pre">end)]</span></code>.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>KeyError</strong> – If a tier is non existent.</p></li>
+<li><p><strong>IndexError</strong> – If no annotations are available in the tiers.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.extract">
+<span class="sig-name descname"><span class="pre">extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.extract" title="Link to this definition">¶</a></dt>
+<dd><p>Extracts the selected time frame as a new object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>int</em>) – Start time.</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – End time.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>class:<cite>pympi.Elan.Eaf</cite> object containing the extracted frame.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.filter_annotations">
+<span class="sig-name descname"><span class="pre">filter_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filtin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filtex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.filter_annotations" title="Link to this definition">¶</a></dt>
+<dd><p>Filter annotations in a tier using an exclusive and/or inclusive
+filter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>tier_name</strong> (<em>str</em>) – Name of the output tier, when <code class="docutils literal notranslate"><span class="pre">None</span></code> the name
+will be generated.</p></li>
+<li><p><strong>filtin</strong> (<em>list</em>) – List of strings to be included, if None all
+annotations all is included.</p></li>
+<li><p><strong>filtex</strong> (<em>list</em>) – List of strings to be excluded, if None no strings
+are excluded.</p></li>
+<li><p><strong>regex</strong> (<em>bool</em>) – If this flag is set, the filters are seen as regex
+matches.</p></li>
+<li><p><strong>safe</strong> (<em>bool</em>) – Ignore zero length annotations(when working with
+possible malformed data).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Name of the created tier.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.generate_annotation_id">
+<span class="sig-name descname"><span class="pre">generate_annotation_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.generate_annotation_id" title="Link to this definition">¶</a></dt>
+<dd><p>Generate the next annotation id, this function is mainly used
+internally.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.generate_ts_id">
+<span class="sig-name descname"><span class="pre">generate_ts_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.generate_ts_id" title="Link to this definition">¶</a></dt>
+<dd><p>Generate the next timeslot id, this function is mainly used
+internally</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time</strong> (<em>int</em>) – Initial time to assign to the timeslot.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the time is negative.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_annotation_data_after_time">
+<span class="sig-name descname"><span class="pre">get_annotation_data_after_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_annotation_data_after_time" title="Link to this definition">¶</a></dt>
+<dd><p>Give the annotation before a given time. When the tier contains
+reference annotations this will be returned, check
+<a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_before_time" title="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_before_time"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_ref_annotation_data_before_time()</span></code></a> for the format. If an
+annotation overlaps with <code class="docutils literal notranslate"><span class="pre">time</span></code> that annotation will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>time</strong> (<em>int</em>) – Time to get the annotation before.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_annotation_data_at_time">
+<span class="sig-name descname"><span class="pre">get_annotation_data_at_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_annotation_data_at_time" title="Link to this definition">¶</a></dt>
+<dd><p>Give the annotations at the given time. When the tier contains
+reference annotations this will be returned, check
+<code class="xref py py-func docutils literal notranslate"><span class="pre">get_ref_annotation_data_at_time()</span></code> for the format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>time</strong> (<em>int</em>) – Time of the annotation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of annotations at that time.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_annotation_data_before_time">
+<span class="sig-name descname"><span class="pre">get_annotation_data_before_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_annotation_data_before_time" title="Link to this definition">¶</a></dt>
+<dd><p>Give the annotation before a given time. When the tier contains
+reference annotations this will be returned, check
+<a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_before_time" title="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_before_time"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_ref_annotation_data_before_time()</span></code></a> for the format. If an
+annotation overlaps with <code class="docutils literal notranslate"><span class="pre">time</span></code> that annotation will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>time</strong> (<em>int</em>) – Time to get the annotation before.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_annotation_data_between_times">
+<span class="sig-name descname"><span class="pre">get_annotation_data_between_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/detectors/sub1/elan_parser.html#ElanParser.get_annotation_data_between_times"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_annotation_data_between_times" title="Link to this definition">¶</a></dt>
+<dd><p>Get the annotation data for a specific tier between the given start and end times.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tier</strong> (<em>str</em>) – The name of the tier.</p></li>
+<li><p><strong>start</strong> (<em>float</em>) – The start time.</p></li>
+<li><p><strong>end</strong> (<em>float</em>) – The end time.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of tuples containing the annotation data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_annotation_data_for_tier">
+<span class="sig-name descname"><span class="pre">get_annotation_data_for_tier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_annotation_data_for_tier" title="Link to this definition">¶</a></dt>
+<dd><p>Gives a list of annotations of the form: <code class="docutils literal notranslate"><span class="pre">(begin,</span> <span class="pre">end,</span> <span class="pre">value)</span></code>
+When the tier contains reference annotations this will be returned,
+check <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_for_tier" title="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_for_tier"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_ref_annotation_data_for_tier()</span></code></a> for the format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_child_tiers_for">
+<span class="sig-name descname"><span class="pre">get_child_tiers_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_child_tiers_for" title="Link to this definition">¶</a></dt>
+<dd><p>Give all child tiers for a tier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of all children</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_controlled_vocabulary_names">
+<span class="sig-name descname"><span class="pre">get_controlled_vocabulary_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_controlled_vocabulary_names" title="Link to this definition">¶</a></dt>
+<dd><p>Gives all the controlled vocabulary names</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_cv_descriptions">
+<span class="sig-name descname"><span class="pre">get_cv_descriptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_cv_descriptions" title="Link to this definition">¶</a></dt>
+<dd><p>Gives all the controlled vocabulary descriptions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cv_id</strong> (<em>str</em>) – Name of the controlled vocabulary.</p>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no controlled vocabulary with that id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_cv_entries">
+<span class="sig-name descname"><span class="pre">get_cv_entries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_cv_entries" title="Link to this definition">¶</a></dt>
+<dd><p>Gives all the controlled vocabulary entries names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cv_id</strong> (<em>str</em>) – Name of the controlled vocabulary.</p>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no controlled vocabulary with that id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_external_ref">
+<span class="sig-name descname"><span class="pre">get_external_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_external_ref" title="Link to this definition">¶</a></dt>
+<dd><p>Give the external reference matching the id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>eid</strong> (<em>str</em>) – Name of the external reference.</p>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no external reference with that id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_external_ref_names">
+<span class="sig-name descname"><span class="pre">get_external_ref_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_external_ref_names" title="Link to this definition">¶</a></dt>
+<dd><p>Gives all the external reference names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_full_time_interval">
+<span class="sig-name descname"><span class="pre">get_full_time_interval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/detectors/sub1/elan_parser.html#ElanParser.get_full_time_interval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_full_time_interval" title="Link to this definition">¶</a></dt>
+<dd><p>Get the full time interval of the ELAN file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing the start and end time of the ELAN file.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps">
+<span class="sig-name descname"><span class="pre">get_gaps_and_overlaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tier1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxlen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps" title="Link to this definition">¶</a></dt>
+<dd><p>Give gaps and overlaps. The return types are shown in the table
+below. The string will be of the format: <code class="docutils literal notranslate"><span class="pre">id_tiername_tiername</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is also a faster method: <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps2" title="detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps2"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_gaps_and_overlaps2()</span></code></a></p>
+</div>
+<p>For example when a gap occurs between tier1 and tier2 and they are
+called <code class="docutils literal notranslate"><span class="pre">speakerA</span></code> and <code class="docutils literal notranslate"><span class="pre">speakerB</span></code> the annotation value of that gap
+will be <code class="docutils literal notranslate"><span class="pre">G12_speakerA_speakerB</span></code>.</p>
+<div class="line-block">
+<div class="line">The gaps and overlaps are calculated using Heldner and Edlunds
+method found in:</div>
+<div class="line"><em>Heldner, M., &amp; Edlund, J. (2010). Pauses, gaps and overlaps in
+conversations. Journal of Phonetics, 38(4), 555–568.
+doi:10.1016/j.wocn.2010.08.002</em></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>O12</p></td>
+<td><p>Overlap from tier1 to tier2</p></td>
+</tr>
+<tr class="row-odd"><td><p>O21</p></td>
+<td><p>Overlap from tier2 to tier1</p></td>
+</tr>
+<tr class="row-even"><td><p>G12</p></td>
+<td><p>Between speaker gap from tier1 to tier2</p></td>
+</tr>
+<tr class="row-odd"><td><p>G21</p></td>
+<td><p>Between speaker gap from tier2 to tier1</p></td>
+</tr>
+<tr class="row-even"><td><p>W12</p></td>
+<td><p>Within speaker overlap from tier2 in tier1</p></td>
+</tr>
+<tr class="row-odd"><td><p>W21</p></td>
+<td><p>Within speaker overlap from tier1 in tier2</p></td>
+</tr>
+<tr class="row-even"><td><p>P1</p></td>
+<td><p>Pause for tier1</p></td>
+</tr>
+<tr class="row-odd"><td><p>P2</p></td>
+<td><p>Pause for tier2</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tier1</strong> (<em>str</em>) – Name of the first tier.</p></li>
+<li><p><strong>tier2</strong> (<em>str</em>) – Name of the second tier.</p></li>
+<li><p><strong>maxlen</strong> (<em>int</em>) – Maximum length of gaps (skip longer ones), if <code class="docutils literal notranslate"><span class="pre">-1</span></code>
+no maximum will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuples of the form <code class="docutils literal notranslate"><span class="pre">[(start,</span> <span class="pre">end,</span> <span class="pre">type)]</span></code>.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>KeyError</strong> – If a tier is non existent.</p></li>
+<li><p><strong>IndexError</strong> – If no annotations are available in the tiers.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps2">
+<span class="sig-name descname"><span class="pre">get_gaps_and_overlaps2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tier1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxlen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps2" title="Link to this definition">¶</a></dt>
+<dd><p>Faster variant of <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps" title="detectors.sub1.elan_parser.ElanParser.get_gaps_and_overlaps"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_gaps_and_overlaps()</span></code></a>. Faster in this case
+means almost 100 times faster…</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tier1</strong> (<em>str</em>) – Name of the first tier.</p></li>
+<li><p><strong>tier2</strong> (<em>str</em>) – Name of the second tier.</p></li>
+<li><p><strong>maxlen</strong> (<em>int</em>) – Maximum length of gaps (skip longer ones), if <code class="docutils literal notranslate"><span class="pre">-1</span></code>
+no maximum will be used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuples of the form <code class="docutils literal notranslate"><span class="pre">[(start,</span> <span class="pre">end,</span> <span class="pre">type)]</span></code>.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If a tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_languages">
+<span class="sig-name descname"><span class="pre">get_languages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_languages" title="Link to this definition">¶</a></dt>
+<dd><p>Gives all the languages in the format:
+<code class="docutils literal notranslate"><span class="pre">{lang_id</span> <span class="pre">-&gt;</span> <span class="pre">(lang_def,</span> <span class="pre">lang_label)}</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_lexicon_ref">
+<span class="sig-name descname"><span class="pre">get_lexicon_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_lexicon_ref" title="Link to this definition">¶</a></dt>
+<dd><p>Gives the lexicon reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reid</strong> (<em>str</em>) – Lexicon reference id.</p>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no lexicon reference matching the id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_lexicon_ref_names">
+<span class="sig-name descname"><span class="pre">get_lexicon_ref_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_lexicon_ref_names" title="Link to this definition">¶</a></dt>
+<dd><p>Gives all the lexicon reference names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_licenses">
+<span class="sig-name descname"><span class="pre">get_licenses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_licenses" title="Link to this definition">¶</a></dt>
+<dd><p>Gives all the licenses in the format: <code class="docutils literal notranslate"><span class="pre">[(name,</span> <span class="pre">url)]</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_linguistic_type_names">
+<span class="sig-name descname"><span class="pre">get_linguistic_type_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_linguistic_type_names" title="Link to this definition">¶</a></dt>
+<dd><p>Give a list of available linguistic types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of linguistic type names.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_linked_files">
+<span class="sig-name descname"><span class="pre">get_linked_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_linked_files" title="Link to this definition">¶</a></dt>
+<dd><p>Give all linked files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_locales">
+<span class="sig-name descname"><span class="pre">get_locales</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_locales" title="Link to this definition">¶</a></dt>
+<dd><p>Gives all the locales in the format: <code class="docutils literal notranslate"><span class="pre">{language_code</span> <span class="pre">-&gt;</span>
+<span class="pre">(country_code,</span> <span class="pre">variant)}</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_parameters_for_linguistic_type">
+<span class="sig-name descname"><span class="pre">get_parameters_for_linguistic_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lingtype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_parameters_for_linguistic_type" title="Link to this definition">¶</a></dt>
+<dd><p>Give the parameter dictionary, this is usable in
+<a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_linguistic_type" title="detectors.sub1.elan_parser.ElanParser.add_linguistic_type"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_linguistic_type()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lingtype</strong> (<em>str</em>) – Name of the linguistic type.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the linguistic type doesn’t exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_parameters_for_tier">
+<span class="sig-name descname"><span class="pre">get_parameters_for_tier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_parameters_for_tier" title="Link to this definition">¶</a></dt>
+<dd><p>Give the parameter dictionary, this is useable in <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_tier" title="detectors.sub1.elan_parser.ElanParser.add_tier"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_tier()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary of parameters.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_parent_aligned_annotation">
+<span class="sig-name descname"><span class="pre">get_parent_aligned_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ref_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_parent_aligned_annotation" title="Link to this definition">¶</a></dt>
+<dd><p>“ Give the aligment annotation that a reference annotation belongs to directly, or indirectly through other
+reference annotations.
+:param str ref_id: Id of a reference annotation.
+:raises KeyError: If no annotation exists with the id or if it belongs to an alignment annotation.
+:returns: The alignment annotation at the end of the reference chain.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_properties">
+<span class="sig-name descname"><span class="pre">get_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_properties" title="Link to this definition">¶</a></dt>
+<dd><p>Gives all the properties in the format: <code class="docutils literal notranslate"><span class="pre">[(key,</span> <span class="pre">value)]</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_at_time">
+<span class="sig-name descname"><span class="pre">get_ref_annotation_at_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_at_time" title="Link to this definition">¶</a></dt>
+<dd><p>Give the ref annotations at the given time of the form
+<code class="docutils literal notranslate"><span class="pre">[(start,</span> <span class="pre">end,</span> <span class="pre">value,</span> <span class="pre">refvalue)]</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>time</strong> (<em>int</em>) – Time of the annotation of the parent.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of annotations at that time.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_after_time">
+<span class="sig-name descname"><span class="pre">get_ref_annotation_data_after_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_after_time" title="Link to this definition">¶</a></dt>
+<dd><p>Give the ref annotation after a time. If an annotation overlaps
+with <cite>ktime`</cite> that annotation will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>time</strong> (<em>int</em>) – Time to get the annotation after.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Annotation after that time in a list</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_before_time">
+<span class="sig-name descname"><span class="pre">get_ref_annotation_data_before_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_before_time" title="Link to this definition">¶</a></dt>
+<dd><p>Give the ref annotation before a time. If an annotation overlaps
+with <code class="docutils literal notranslate"><span class="pre">time</span></code> that annotation will be returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>time</strong> (<em>int</em>) – Time to get the annotation before.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Annotation before that time in a list</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_between_times">
+<span class="sig-name descname"><span class="pre">get_ref_annotation_data_between_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_between_times" title="Link to this definition">¶</a></dt>
+<dd><p>Give the ref annotations between times of the form
+<code class="docutils literal notranslate"><span class="pre">[(start,</span> <span class="pre">end,</span> <span class="pre">value,</span> <span class="pre">refvalue)]</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – End time of the annotation of the parent.</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – Start time of the annotation of the parent.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of annotations at that time.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_for_tier">
+<span class="sig-name descname"><span class="pre">get_ref_annotation_data_for_tier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_ref_annotation_data_for_tier" title="Link to this definition">¶</a></dt>
+<dd><p>“Give a list of all reference annotations of the form:
+<code class="docutils literal notranslate"><span class="pre">[(start,</span> <span class="pre">end,</span> <span class="pre">value,</span> <span class="pre">refvalue)]</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference annotations within that tier.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_secondary_linked_files">
+<span class="sig-name descname"><span class="pre">get_secondary_linked_files</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_secondary_linked_files" title="Link to this definition">¶</a></dt>
+<dd><p>Give all linked files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_tier_ids_for_linguistic_type">
+<span class="sig-name descname"><span class="pre">get_tier_ids_for_linguistic_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ling_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_tier_ids_for_linguistic_type" title="Link to this definition">¶</a></dt>
+<dd><p>Give a list of all tiers matching a linguistic type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ling_type</strong> (<em>str</em>) – Name of the linguistic type.</p></li>
+<li><p><strong>parent</strong> (<em>str</em>) – Only match tiers from this parent, when <code class="docutils literal notranslate"><span class="pre">None</span></code>
+this option will be ignored.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of tiernames.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If a tier or linguistic type is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_tier_name">
+<span class="sig-name descname"><span class="pre">get_tier_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/detectors/sub1/elan_parser.html#ElanParser.get_tier_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_tier_name" title="Link to this definition">¶</a></dt>
+<dd><p>Get the names of all tiers in the ELAN file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of tier names.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_tier_names">
+<span class="sig-name descname"><span class="pre">get_tier_names</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_tier_names" title="Link to this definition">¶</a></dt>
+<dd><p>List all the tier names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of all tier names</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.get_unique_annotations">
+<span class="sig-name descname"><span class="pre">get_unique_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annotation_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/detectors/sub1/elan_parser.html#ElanParser.get_unique_annotations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.get_unique_annotations" title="Link to this definition">¶</a></dt>
+<dd><p>Get a dictionary of unique annotations for each tier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>annotation_dict</strong> (<em>dict</em>) – A dictionary where the keys are tier names and the values are lists of annotation data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary where the keys are tier names and the values are sets of unique annotations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.insert_annotation">
+<span class="sig-name descname"><span class="pre">insert_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">svg_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.insert_annotation" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.</span></p>
+</div>
+<p>Use <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_annotation" title="detectors.sub1.elan_parser.ElanParser.add_annotation"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_annotation()</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.insert_ref_annotation">
+<span class="sig-name descname"><span class="pre">insert_ref_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tier2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prev</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">svg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.insert_ref_annotation" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.</span></p>
+</div>
+<p>Use <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.add_ref_annotation" title="detectors.sub1.elan_parser.ElanParser.add_ref_annotation"><code class="xref py py-func docutils literal notranslate"><span class="pre">add_ref_annotation()</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.merge_tiers">
+<span class="sig-name descname"><span class="pre">merge_tiers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tiers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tiernew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gapt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.merge_tiers" title="Link to this definition">¶</a></dt>
+<dd><p>Merge tiers into a new tier and when the gap is lower then the
+threshhold glue the annotations together.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tiers</strong> (<em>list</em>) – List of tier names.</p></li>
+<li><p><strong>tiernew</strong> (<em>str</em>) – Name for the new tier, if <code class="docutils literal notranslate"><span class="pre">None</span></code> the name will be
+generated.</p></li>
+<li><p><strong>gapt</strong> (<em>int</em>) – Threshhold for the gaps, if the this is set to 10 it
+means that all gaps below 10 are ignored.</p></li>
+<li><p><strong>sep</strong> (<em>str</em>) – Separator for the merged annotations.</p></li>
+<li><p><strong>safe</strong> (<em>bool</em>) – Ignore zero length annotations(when working with
+possible malformed data).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Name of the created tier.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>KeyError</strong> – If a tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_all_annotations_from_tier">
+<span class="sig-name descname"><span class="pre">remove_all_annotations_from_tier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_all_annotations_from_tier" title="Link to this definition">¶</a></dt>
+<dd><p>remove all annotations from a tier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_annotation">
+<span class="sig-name descname"><span class="pre">remove_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_annotation" title="Link to this definition">¶</a></dt>
+<dd><p>Remove an annotation in a tier, if you need speed the best thing is
+to clean the timeslots after the last removal. When the tier contains
+reference annotations <a class="reference internal" href="#detectors.sub1.elan_parser.ElanParser.remove_ref_annotation" title="detectors.sub1.elan_parser.ElanParser.remove_ref_annotation"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_ref_annotation()</span></code></a> will be executed
+instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>time</strong> (<em>int</em>) – Timepoint within the annotation.</p></li>
+<li><p><strong>clean</strong> (<em>bool</em>) – Flag to clean the timeslots afterwards.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of removed annotations.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_controlled_vocabulary">
+<span class="sig-name descname"><span class="pre">remove_controlled_vocabulary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_controlled_vocabulary" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a controlled vocabulary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cv_id</strong> (<em>str</em>) – Name of the controlled vocabulary.</p>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no controlled vocabulary with that name.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_cv_description">
+<span class="sig-name descname"><span class="pre">remove_cv_description</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lang_ref</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_cv_description" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a controlled vocabulary description.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cv_id</strong> (<em>str</em>) – Name of the controlled vocabulary.</p>
+</dd>
+<dt class="field-even">Paarm str cve_id<span class="colon">:</span></dt>
+<dd class="field-even"><p>Name of the entry.</p>
+</dd>
+<dt class="field-odd">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If there is no controlled vocabulary with that name.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_cv_entry">
+<span class="sig-name descname"><span class="pre">remove_cv_entry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cv_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cve_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_cv_entry" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a controlled vocabulary entry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cv_id</strong> (<em>str</em>) – Name of the controlled vocabulary.</p>
+</dd>
+<dt class="field-even">Paarm str cve_id<span class="colon">:</span></dt>
+<dd class="field-even"><p>Name of the entry.</p>
+</dd>
+<dt class="field-odd">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If there is no entry or controlled vocabulary with
+that name.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_external_ref">
+<span class="sig-name descname"><span class="pre">remove_external_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_external_ref" title="Link to this definition">¶</a></dt>
+<dd><p>Remove an external reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>eid</strong> (<em>str</em>) – Name of the external reference.</p>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no external reference with that id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_language">
+<span class="sig-name descname"><span class="pre">remove_language</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lang_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_language" title="Link to this definition">¶</a></dt>
+<dd><p>Remove the language mathing the id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lang_id</strong> (<em>str</em>) – Language id of the language.</p>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no language matching the language id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_lexicon_ref">
+<span class="sig-name descname"><span class="pre">remove_lexicon_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_lexicon_ref" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a lexicon reference matching the id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reid</strong> (<em>str</em>) – Lexicon reference id.</p>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no lexicon reference matching the id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_license">
+<span class="sig-name descname"><span class="pre">remove_license</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_license" title="Link to this definition">¶</a></dt>
+<dd><p>Remove all licenses matching both key and value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the license.</p></li>
+<li><p><strong>url</strong> (<em>str</em>) – URL of the license.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_linguistic_type">
+<span class="sig-name descname"><span class="pre">remove_linguistic_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ling_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_linguistic_type" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a linguistic type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ling_type</strong> (<em>str</em>) – Name of the linguistic type.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – When the linguistic type doesn’t exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_linked_files">
+<span class="sig-name descname"><span class="pre">remove_linked_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mimetype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ex_from</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_linked_files" title="Link to this definition">¶</a></dt>
+<dd><p>Remove all linked files that match all the criteria, criterias that
+are <code class="docutils literal notranslate"><span class="pre">None</span></code> are ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – Path of the file.</p></li>
+<li><p><strong>relpath</strong> (<em>str</em>) – Relative filepath.</p></li>
+<li><p><strong>mimetype</strong> (<em>str</em>) – Mimetype of the file.</p></li>
+<li><p><strong>time_origin</strong> (<em>int</em>) – Time origin.</p></li>
+<li><p><strong>ex_from</strong> (<em>str</em>) – Extracted from.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_locale">
+<span class="sig-name descname"><span class="pre">remove_locale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">language_code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_locale" title="Link to this definition">¶</a></dt>
+<dd><p>Remove the locale matching the language code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>language_code</strong> (<em>str</em>) – Language code of the locale.</p>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If there is no locale matching the language code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_property">
+<span class="sig-name descname"><span class="pre">remove_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_property" title="Link to this definition">¶</a></dt>
+<dd><p>Remove all properties matching both key and value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – Key of the property.</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – Value of the property.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_ref_annotation">
+<span class="sig-name descname"><span class="pre">remove_ref_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_ref_annotation" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a reference annotation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_tier</strong> (<em>str</em>) – Name of tier.</p></li>
+<li><p><strong>time</strong> (<em>int</em>) – Time of the referenced annotation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the tier is non existent.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Number of removed annotations.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_secondary_linked_files">
+<span class="sig-name descname"><span class="pre">remove_secondary_linked_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mimetype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assoc_with</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_secondary_linked_files" title="Link to this definition">¶</a></dt>
+<dd><p>Remove all secondary linked files that match all the criteria,
+criterias that are <code class="docutils literal notranslate"><span class="pre">None</span></code> are ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – Path of the file.</p></li>
+<li><p><strong>relpath</strong> (<em>str</em>) – Relative filepath.</p></li>
+<li><p><strong>mimetype</strong> (<em>str</em>) – Mimetype of the file.</p></li>
+<li><p><strong>time_origin</strong> (<em>int</em>) – Time origin.</p></li>
+<li><p><strong>ex_from</strong> (<em>str</em>) – Extracted from.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_tier">
+<span class="sig-name descname"><span class="pre">remove_tier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_tier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_tier" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a tier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_tier</strong> (<em>str</em>) – Name of the tier.</p></li>
+<li><p><strong>clean</strong> (<em>bool</em>) – Flag to also clean the timeslots.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.remove_tiers">
+<span class="sig-name descname"><span class="pre">remove_tiers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tiers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.remove_tiers" title="Link to this definition">¶</a></dt>
+<dd><p>Remove multiple tiers, note that this is a lot faster then removing
+them individually because of the delayed cleaning of timeslots.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tiers</strong> (<em>list</em>) – Names of the tier to remove.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If a tier is non existent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.rename_tier">
+<span class="sig-name descname"><span class="pre">rename_tier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_from</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_to</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.rename_tier" title="Link to this definition">¶</a></dt>
+<dd><p>Rename a tier. Note that this renames also the child tiers that have
+the tier as a parent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_from</strong> (<em>str</em>) – Original name of the tier.</p></li>
+<li><p><strong>id_to</strong> (<em>str</em>) – Target name of the tier.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Throws KeyError<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the tier doesnt’ exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.shift_annotations">
+<span class="sig-name descname"><span class="pre">shift_annotations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.shift_annotations" title="Link to this definition">¶</a></dt>
+<dd><p>Shift all annotations in time. Annotations that are in the beginning
+and a left shift is applied can be squashed or discarded.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time</strong> (<em>int</em>) – Time shift width, negative numbers make a left shift.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple of a list of squashed annotations and a list of removed
+annotations in the format: <code class="docutils literal notranslate"><span class="pre">(tiername,</span> <span class="pre">start,</span> <span class="pre">end,</span> <span class="pre">value)</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.to_file">
+<span class="sig-name descname"><span class="pre">to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.to_file" title="Link to this definition">¶</a></dt>
+<dd><p>Write the object to a file, if the file already exists a backup will
+be created with the <code class="docutils literal notranslate"><span class="pre">.bak</span></code> suffix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – Filepath to write to.</p></li>
+<li><p><strong>pretty</strong> (<em>bool</em>) – Flag for pretty XML printing (Only unset this if
+you are afraid of wasting bytes because it won’t print unneccesary
+whitespace).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectors.sub1.elan_parser.ElanParser.to_textgrid">
+<span class="sig-name descname"><span class="pre">to_textgrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filtin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filtex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectors.sub1.elan_parser.ElanParser.to_textgrid" title="Link to this definition">¶</a></dt>
+<dd><p>Convert the object to a <code class="xref py py-class docutils literal notranslate"><span class="pre">pympi.Praat.TextGrid</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filtin</strong> (<em>list</em>) – Include only tiers in this list, if empty
+all tiers are included.</p></li>
+<li><p><strong>filtex</strong> (<em>list</em>) – Exclude all tiers in this list.</p></li>
+<li><p><strong>regex</strong> (<em>bool</em>) – If this flag is set the filters are seen as regexes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pympi.Praat.TextGrid</span></code> representation.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ImportError</strong> – If the pympi.Praat module can’t be loaded.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="detectors.sub1.elan_parser.html" class="btn btn-neutral float-left" title="detectors.sub1.elan_parser" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="detectors.sub2.html" class="btn btn-neutral float-right" title="detectors.sub2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, oslab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

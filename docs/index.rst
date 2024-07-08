@@ -10,11 +10,13 @@ Welcome to NICE Toolbox's documentation!
    :hidden:
 
    Home page <self>
+   Installation <installation>
+   Getting started <getting_started>
    Oslab <_autosummary/oslab_utils>
    API reference <_autosummary/detectors>
 
 
-   .. :maxdepth: 2
-   .. :caption: Contents:
+.. :maxdepth: 2
+   :caption: Contents:
 
-   .. modules
+   modules

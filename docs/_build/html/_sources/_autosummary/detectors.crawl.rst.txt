@@ -1,0 +1,30 @@
+detectors.crawl
+===============
+
+.. automodule:: detectors.crawl
+   :members:
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
+.. autosummary::
+   :toctree:
+   :template: custom-module-template.rst
+   :recursive:
+
+   detectors.crawl.crawl
+

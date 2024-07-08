@@ -2,7 +2,7 @@ oslab\_utils.git\_utils
 =======================
 
 .. automodule:: oslab_utils.git_utils
-
+   :members:
    
    
    

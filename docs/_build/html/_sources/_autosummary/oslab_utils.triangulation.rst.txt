@@ -2,7 +2,7 @@ oslab\_utils.triangulation
 ==========================
 
 .. automodule:: oslab_utils.triangulation
-
+   :members:
    
    
    
