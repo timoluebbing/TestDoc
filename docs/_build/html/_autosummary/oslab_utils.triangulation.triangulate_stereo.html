@@ -19,7 +19,9 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="oslab_utils.triangulation.undistort_points_pinhole" href="oslab_utils.triangulation.undistort_points_pinhole.html" />
+    <link rel="prev" title="oslab_utils.triangulation" href="oslab_utils.triangulation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,8 +43,21 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home page</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="oslab_utils.html">Oslab</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="oslab_utils.config.html">oslab_utils.config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oslab_utils.git_utils.html">oslab_utils.git_utils</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="oslab_utils.triangulation.html">oslab_utils.triangulation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">oslab_utils.triangulation.triangulate_stereo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oslab_utils.triangulation.triangulate_stereo"><code class="docutils literal notranslate"><span class="pre">triangulate_stereo()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="oslab_utils.triangulation.undistort_points_pinhole.html">oslab_utils.triangulation.undistort_points_pinhole</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="detectors.html">API reference</a></li>
 </ul>
 
@@ -60,6 +75,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="oslab_utils.html">oslab_utils</a></li>
+          <li class="breadcrumb-item"><a href="oslab_utils.triangulation.html">oslab_utils.triangulation</a></li>
       <li class="breadcrumb-item active">oslab_utils.triangulation.triangulate_stereo</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -75,13 +92,20 @@
 <dt class="sig sig-object py" id="oslab_utils.triangulation.triangulate_stereo">
 <span class="sig-prename descclassname"><span class="pre">oslab_utils.triangulation.</span></span><span class="sig-name descname"><span class="pre">triangulate_stereo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection_matrix1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projection_matrix2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undistorted_points1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">undistorted_points2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/triangulation.html#triangulate_stereo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.triangulation.triangulate_stereo" title="Link to this definition">¶</a></dt>
 <dd><p>Triangulates the 3D position of points in Euclidean coordinates from two camera views.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>projection_matrix1 (np.array): Projection matrix of the first camera.
-projection_matrix2 (np.array): Projection matrix of the second camera.
-undistorted_points1 (np.array): Coordinates of undistorted points from camera 1.
-undistorted_points2 (np.array): Coordinates of undistorted points from camera 2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>projection_matrix1</strong> (<em>np.array</em>) – Projection matrix of the first camera.</p></li>
+<li><p><strong>projection_matrix2</strong> (<em>np.array</em>) – Projection matrix of the second camera.</p></li>
+<li><p><strong>undistorted_points1</strong> (<em>np.array</em>) – Coordinates of undistorted points from camera 1.</p></li>
+<li><p><strong>undistorted_points2</strong> (<em>np.array</em>) – Coordinates of undistorted points from camera 2.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>np.array: The 3D position of points in Euclidean coordinates.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The 3D position of points in Euclidean coordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
 </dd>
 </dl>
 </dd></dl>
@@ -91,7 +115,10 @@ undistorted_points2 (np.array): Coordinates of undistorted points from camera 2.
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="oslab_utils.triangulation.html" class="btn btn-neutral float-left" title="oslab_utils.triangulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="oslab_utils.triangulation.undistort_points_pinhole.html" class="btn btn-neutral float-right" title="oslab_utils.triangulation.undistort_points_pinhole" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

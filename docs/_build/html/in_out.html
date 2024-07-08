@@ -43,6 +43,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/oslab_utils.html">Oslab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_autosummary/detectors.html">API reference</a></li>
 </ul>
 
@@ -73,98 +74,101 @@
 <span id="in-out-module"></span><h1>in_out module<a class="headerlink" href="#module-in_out" title="Link to this heading">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="in_out.create_directory_tree">
-<span class="sig-prename descclassname"><span class="pre">in_out.</span></span><span class="sig-name descname"><span class="pre">create_directory_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/in_out.html#create_directory_tree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#in_out.create_directory_tree" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">in_out.</span></span><span class="sig-name descname"><span class="pre">create_directory_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="_autosummary/oslab_utils.git_utils.CustomRepo.html#oslab_utils.git_utils.CustomRepo.None" title="oslab_utils.git_utils.CustomRepo.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/in_out.html#create_directory_tree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#in_out.create_directory_tree" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the folder structure from source and creates the same folder structure under the destination root.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> (<em>str</em>) – The source root.</p></li>
+<li><p><strong>dest</strong> (<em>str</em>) – The destination root.</p></li>
+</ul>
 </dd>
-</dl>
-<dl class="simple">
-<dt>Args:</dt><dd><p>source (str): The source root.
-dest (str): The destination root.</p>
-</dd>
-<dt>Returns:</dt><dd><p>None. Creates empty folders under the given destination root.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None. Creates empty folders under the given destination root.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="in_out.create_tmp_folder">
-<span class="sig-prename descclassname"><span class="pre">in_out.</span></span><span class="sig-name descname"><span class="pre">create_tmp_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tmp_folders</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/in_out.html#create_tmp_folder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#in_out.create_tmp_folder" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">in_out.</span></span><span class="sig-name descname"><span class="pre">create_tmp_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tmp_folders</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/in_out.html#create_tmp_folder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#in_out.create_tmp_folder" title="Link to this definition">¶</a></dt>
 <dd><p>Create temporary run folders and yield control to the caller.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>tmp_folders (str or list): The path(s) of the temporary folders to be created.</dt><dd><p>If a string is provided, a single temporary folder will be created.
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tmp_folders</strong> (<em>str</em><em> or </em><em>list</em>) – The path(s) of the temporary folders to be created.
+If a string is provided, a single temporary folder will be created.
 If a list of strings is provided, multiple temporary folders will be created.</p>
 </dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>None</em> –</p>
+<dl class="simple">
+<dt>The control is returned to the caller,</dt><dd><p>allowing the caller to execute a block of code.</p>
+</dd>
 </dl>
 </dd>
-<dt>Yields:</dt><dd><dl class="simple">
-<dt>None: The control is returned to the caller, </dt><dd><p>allowing the caller to execute a block of code.</p>
-</dd>
-</dl>
-</dd>
-<dt>Raises:</dt><dd><p>OSError: If there is an error creating the temporary folders.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>OSError</strong> – If there is an error creating the temporary folders.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="in_out.delete_files_into_list">
-<span class="sig-prename descclassname"><span class="pre">in_out.</span></span><span class="sig-name descname"><span class="pre">delete_files_into_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/in_out.html#delete_files_into_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#in_out.delete_files_into_list" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">in_out.</span></span><span class="sig-name descname"><span class="pre">delete_files_into_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="_autosummary/oslab_utils.git_utils.CustomRepo.html#oslab_utils.git_utils.CustomRepo.None" title="oslab_utils.git_utils.CustomRepo.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/in_out.html#delete_files_into_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#in_out.delete_files_into_list" title="Link to this definition">¶</a></dt>
 <dd><p>Deletes the files specified in the given list of filepaths.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filepath_list</strong> (<em>list</em>) – A list of filepaths to be deleted.</p>
 </dd>
-</dl>
-<dl class="simple">
-<dt>Args:</dt><dd><p>filepath_list (list): A list of filepaths to be deleted.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
 </dd>
-<dt>Returns:</dt><dd><p>None</p>
-</dd>
-<dt>Raises:</dt><dd><p>Exception: If the file cannot be deleted.</p>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If the file cannot be deleted.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="in_out.list_directories_under_root">
-<span class="sig-prename descclassname"><span class="pre">in_out.</span></span><span class="sig-name descname"><span class="pre">list_directories_under_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/in_out.html#list_directories_under_root"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#in_out.list_directories_under_root" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">in_out.</span></span><span class="sig-name descname"><span class="pre">list_directories_under_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/in_out.html#list_directories_under_root"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#in_out.list_directories_under_root" title="Link to this definition">¶</a></dt>
 <dd><p>Lists all the subdirectories under the given root path.</p>
 <dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>root_path</strong> (<em>str</em>) – The root path to search for subdirectories.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of subdirectory paths.</p>
+</dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></span></p>
+<dd class="field-odd"><p>list</p>
 </dd>
-</dl>
-<dl class="simple">
-<dt>Args:</dt><dd><p>root_path (str): The root path to search for subdirectories.</p>
-</dd>
-<dt>Returns:</dt><dd><p>list: A list of subdirectory paths.</p>
-</dd>
-<dt>Raises:</dt><dd><p>None</p>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>None</strong> – </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="in_out.list_files_under_root">
-<span class="sig-prename descclassname"><span class="pre">in_out.</span></span><span class="sig-name descname"><span class="pre">list_files_under_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/in_out.html#list_files_under_root"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#in_out.list_files_under_root" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">in_out.</span></span><span class="sig-name descname"><span class="pre">list_files_under_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ext</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/in_out.html#list_files_under_root"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#in_out.list_files_under_root" title="Link to this definition">¶</a></dt>
 <dd><p>Lists all files under a given root.</p>
 <dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root_path</strong> (<em>str</em>) – The root path.</p></li>
+<li><p><strong>ext</strong> (<em>str</em><em>, </em><em>optional</em>) – Extension of the requested file type. Default is an empty string.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>If ext parameter is an empty string, lists all files under the given root.</dt><dd><p>Otherwise, lists the files with the given extension under the given root.</p>
+</dd>
+</dl>
+</p>
+</dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></span></p>
-</dd>
-</dl>
-<dl class="simple">
-<dt>Args:</dt><dd><p>root_path (str): The root path.
-ext (str, optional): Extension of the requested file type. Default is an empty string.</p>
-</dd>
-<dt>Returns:</dt><dd><dl class="simple">
-<dt>list: If ext parameter is an empty string, lists all files under the given root.</dt><dd><p>Otherwise, lists the files with the given extension under the given root.</p>
-</dd>
-</dl>
+<dd class="field-odd"><p>list</p>
 </dd>
 </dl>
 </dd></dl>

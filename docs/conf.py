@@ -25,11 +25,14 @@ release = '0.0.1'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    'sphinx.ext.napoleon',  # Support for NumPy and Google style docstrings
     'sphinx.ext.autodoc',  # Core Sphinx library for auto html doc generation from docstrings
     'sphinx.ext.autosummary',  # Create neat summary tables for modules/classes/methods etc
     'sphinx.ext.intersphinx',  # Link to other project's documentation (see mapping below)
     'sphinx.ext.viewcode',  # Add a link to the Python source code for classes, functions etc.
-#    'sphinx_autodoc_typehints', # Automatically document param types (less noise in class signature)
+    'myst_parser',  # Markdown support
+    # 'sphinx.ext.todo',  # Include todos in the documentation
+    # 'sphinx_autodoc_typehints', # Automatically document param types (less noise in class signature)
 ]
 
 autosummary_generate = True  # Turn on sphinx.ext.autosummary

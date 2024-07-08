@@ -19,7 +19,9 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="detectors" href="detectors.html" />
+    <link rel="prev" title="oslab_utils.triangulation.triangulate_stereo" href="oslab_utils.triangulation.triangulate_stereo.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,8 +43,21 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home page</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="oslab_utils.html">Oslab</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="oslab_utils.config.html">oslab_utils.config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oslab_utils.git_utils.html">oslab_utils.git_utils</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="oslab_utils.triangulation.html">oslab_utils.triangulation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="oslab_utils.triangulation.triangulate_stereo.html">oslab_utils.triangulation.triangulate_stereo</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">oslab_utils.triangulation.undistort_points_pinhole</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oslab_utils.triangulation.undistort_points_pinhole"><code class="docutils literal notranslate"><span class="pre">undistort_points_pinhole()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="detectors.html">API reference</a></li>
 </ul>
 
@@ -60,6 +75,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="oslab_utils.html">oslab_utils</a></li>
+          <li class="breadcrumb-item"><a href="oslab_utils.triangulation.html">oslab_utils.triangulation</a></li>
       <li class="breadcrumb-item active">oslab_utils.triangulation.undistort_points_pinhole</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -75,12 +92,19 @@
 <dt class="sig sig-object py" id="oslab_utils.triangulation.undistort_points_pinhole">
 <span class="sig-prename descclassname"><span class="pre">oslab_utils.triangulation.</span></span><span class="sig-name descname"><span class="pre">undistort_points_pinhole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intrinsics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distortions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/triangulation.html#undistort_points_pinhole"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.triangulation.undistort_points_pinhole" title="Link to this definition">¶</a></dt>
 <dd><p>Undistorts the given points based on intrinsics and distortions parameters.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>point_coords (np.array): The x and y values of the points.
-intrinsics (np.array): The intrinsics matrix.
-distortions (np.array): The distortions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point_coords</strong> (<em>np.array</em>) – The x and y values of the points.</p></li>
+<li><p><strong>intrinsics</strong> (<em>np.array</em>) – The intrinsics matrix.</p></li>
+<li><p><strong>distortions</strong> (<em>np.array</em>) – The distortions.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>np.array: The undistorted 2D point coordinates.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The undistorted 2D point coordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
 </dd>
 </dl>
 </dd></dl>
@@ -90,7 +114,10 @@ distortions (np.array): The distortions.</p>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="oslab_utils.triangulation.triangulate_stereo.html" class="btn btn-neutral float-left" title="oslab_utils.triangulation.triangulate_stereo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="detectors.html" class="btn btn-neutral float-right" title="detectors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

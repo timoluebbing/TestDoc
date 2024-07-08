@@ -19,7 +19,9 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="oslab_utils.config.config_fill_placeholders" href="oslab_utils.config.config_fill_placeholders.html" />
+    <link rel="prev" title="oslab_utils.config" href="oslab_utils.config.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,8 +43,23 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home page</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="oslab_utils.html">Oslab</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="oslab_utils.config.html">oslab_utils.config</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">oslab_utils.config.config_fill_auto</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oslab_utils.config.config_fill_auto"><code class="docutils literal notranslate"><span class="pre">config_fill_auto()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="oslab_utils.config.config_fill_placeholders.html">oslab_utils.config.config_fill_placeholders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oslab_utils.config.load_config.html">oslab_utils.config.load_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oslab_utils.config.save_config.html">oslab_utils.config.save_config</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="oslab_utils.git_utils.html">oslab_utils.git_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oslab_utils.triangulation.html">oslab_utils.triangulation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="detectors.html">API reference</a></li>
 </ul>
 
@@ -60,6 +77,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="oslab_utils.html">oslab_utils</a></li>
+          <li class="breadcrumb-item"><a href="oslab_utils.config.html">oslab_utils.config</a></li>
       <li class="breadcrumb-item active">oslab_utils.config.config_fill_auto</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -75,20 +94,27 @@
 <dt class="sig sig-object py" id="oslab_utils.config.config_fill_auto">
 <span class="sig-prename descclassname"><span class="pre">oslab_utils.config.</span></span><span class="sig-name descname"><span class="pre">config_fill_auto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/oslab_utils/config.html#config_fill_auto"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.config.config_fill_auto" title="Link to this definition">¶</a></dt>
 <dd><p>This function fills placeholders in the configuration data with auto-generated values.</p>
-<dl>
-<dt>Args:</dt><dd><p>config (dict): The configuration data to be processed.
-working_directory (str, optional): The directory where the git repository is located.</p>
-<blockquote>
-<div><p>Defaults to the current working directory.</p>
-</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>dict</em>) – The configuration data to be processed.</p></li>
+<li><p><strong>working_directory</strong> (<em>str</em><em>, </em><em>optional</em>) – The directory where the git repository is located.
+Defaults to the current working directory.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>dict: The configuration data with placeholders replaced with auto-generated values.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The configuration data with placeholders replaced with auto-generated values.</p>
 </dd>
-<dt>Note:</dt><dd><p>This function uses the <cite>oslab_utils.git_utils</cite> module to get the git hash and commit 
-message. The placeholders filled are: &lt;git_hash&gt;, &lt;commit_message&gt;, &lt;me&gt;, &lt;yyyymmdd&gt;, 
-&lt;today&gt;, and &lt;time&gt;.</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function uses the <cite>oslab_utils.git_utils</cite> module to get the git hash and commit
+message. The placeholders filled are: &lt;git_hash&gt;, &lt;commit_message&gt;, &lt;me&gt;, &lt;yyyymmdd&gt;,
+&lt;today&gt;, and &lt;time&gt;.</p>
+</div>
 </dd></dl>
 
 </section>
@@ -96,7 +122,10 @@ message. The placeholders filled are: &lt;git_hash&gt;, &lt;commit_message&gt;, 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="oslab_utils.config.html" class="btn btn-neutral float-left" title="oslab_utils.config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="oslab_utils.config.config_fill_placeholders.html" class="btn btn-neutral float-right" title="oslab_utils.config.config_fill_placeholders" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
