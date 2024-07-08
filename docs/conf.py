@@ -30,7 +30,7 @@ extensions = [
     'sphinx.ext.autosummary',  # Create neat summary tables for modules/classes/methods etc
     'sphinx.ext.intersphinx',  # Link to other project's documentation (see mapping below)
     'sphinx.ext.viewcode',  # Add a link to the Python source code for classes, functions etc.
-    'myst_parser',  # Markdown support
+    # 'myst_parser',  # Markdown support
     # 'sphinx.ext.todo',  # Include todos in the documentation
     # 'sphinx_autodoc_typehints', # Automatically document param types (less noise in class signature)
 ]
