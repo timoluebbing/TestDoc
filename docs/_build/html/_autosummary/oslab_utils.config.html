@@ -45,6 +45,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="oslab_utils.html">Oslab</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">oslab_utils.config</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="oslab_utils.config.config_fill_auto.html">oslab_utils.config.config_fill_auto</a></li>
@@ -97,16 +99,16 @@ path_config: &lt;pis_folder_path&gt; &lt;local_input_path&gt; &lt;local_output_p
 <p class="rubric">Functions</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.config.config_fill_auto" title="oslab_utils.config.config_fill_auto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_fill_auto</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="oslab_utils.config.config_fill_auto.html#oslab_utils.config.config_fill_auto" title="oslab_utils.config.config_fill_auto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_fill_auto</span></code></a></p></td>
 <td><p>This function fills placeholders in the configuration data with auto-generated values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.config.config_fill_placeholders" title="oslab_utils.config.config_fill_placeholders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_fill_placeholders</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="oslab_utils.config.config_fill_placeholders.html#oslab_utils.config.config_fill_placeholders" title="oslab_utils.config.config_fill_placeholders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">config_fill_placeholders</span></code></a></p></td>
 <td><p>Replace placeholders in the given configuration data with their corresponding values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#oslab_utils.config.load_config" title="oslab_utils.config.load_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_config</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="oslab_utils.config.load_config.html#oslab_utils.config.load_config" title="oslab_utils.config.load_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_config</span></code></a></p></td>
 <td><p>Load a configuration file in YAML or TOML format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#oslab_utils.config.save_config" title="oslab_utils.config.save_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_config</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="oslab_utils.config.save_config.html#oslab_utils.config.save_config" title="oslab_utils.config.save_config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_config</span></code></a></p></td>
 <td><p>Save the given configuration data to the specified file.</p></td>
 </tr>
 </tbody>
@@ -185,7 +187,7 @@ be converted to Windows format.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="oslab_utils.config.save_config">
-<span class="sig-prename descclassname"><span class="pre">oslab_utils.config.</span></span><span class="sig-name descname"><span class="pre">save_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="oslab_utils.git_utils.html#oslab_utils.git_utils.CustomRepo.None" title="oslab_utils.git_utils.CustomRepo.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/oslab_utils/config.html#save_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.config.save_config" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">oslab_utils.config.</span></span><span class="sig-name descname"><span class="pre">save_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="oslab_utils.git_utils.CustomRepo.html#oslab_utils.git_utils.CustomRepo.None" title="oslab_utils.git_utils.CustomRepo.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/oslab_utils/config.html#save_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oslab_utils.config.save_config" title="Link to this definition">¶</a></dt>
 <dd><p>Save the given configuration data to the specified file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
