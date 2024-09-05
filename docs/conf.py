@@ -51,11 +51,12 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # Readthedocs theme
 # on_rtd is whether on readthedocs.org, this line of code grabbed from docs.readthedocs.org...
-on_rtd = os.environ.get("READTHEDOCS", None) == "True"
-if not on_rtd:  # only import and set the theme if we're building docs locally
-    import sphinx_rtd_theme
-    html_theme = "sphinx_rtd_theme"
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# on_rtd = os.environ.get("READTHEDOCS", None) == "True"
+# if not on_rtd:  # only import and set the theme if we're building docs locally 
+# ! This is outdated I think, read the docs does not automatically set the theme anymore
+import sphinx_rtd_theme
+html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_css_files = ["readthedocs-custom.css"] # Override some CSS settings
 
 
