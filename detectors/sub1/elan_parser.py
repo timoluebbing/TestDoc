@@ -1,5 +1,4 @@
 from pympi.Elan import Eaf
-# from oslab_utils.time import to_milliseconds
 
 
 class ElanParser(Eaf):

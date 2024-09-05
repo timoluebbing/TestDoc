@@ -3,46 +3,9 @@
 """
 import sys
 import os
-from oslab_utils.config import config_fill_auto, save_config
 import logging
 from contextlib import contextmanager
 import shutil
-
-
-def log_configs(configs: dict, out_folder: str, file_name: str = 'log_config') -> None:
-    """
-    Logs the configurations to a file.
-
-    The function takes in a dictionary of configurations, an output folder path, and an optional
-    file name. It fills in placeholders in the code_config dictionary with actual values using 
-    the config_fill_auto function. Then, it constructs the log file path by joining the output 
-    folder path and the file name with a .toml extension. After that, it updates the configs 
-    dictionary with the filled code_config and saves the configurations to the log file using the
-    save_config function.
-    
-    Args:
-        configs (dict): A dictionary containing the configurations to be logged.
-        out_folder (str): The path to the output folder where the log file will be saved.
-        file_name (str, optional): The name of the log file. Defaults to 'log_config'.
-
-    Returns:
-        None
-    """
-    code_config = dict(
-            user="<me>",
-            git_hash="<git_hash>",
-            commit_message="<commit_message>",
-            date="<today>",
-            time="<time>",
-    )
-    # fill placeholders
-    code_config = config_fill_auto(code_config)
-
-    file_name = config_fill_auto(dict(file=file_name))['file']
-    config_log_file = os.path.join(out_folder, f"{file_name}.toml")
-
-    configs.update(code_config=code_config)
-    save_config(configs, config_log_file)
 
 
 def setup_logging(log_path: str, level=logging.DEBUG) -> None:

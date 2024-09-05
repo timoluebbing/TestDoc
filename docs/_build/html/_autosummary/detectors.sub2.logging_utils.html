@@ -53,12 +53,10 @@
 <li class="toctree-l2 current"><a class="reference internal" href="detectors.sub2.html">detectors.sub2</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">detectors.sub2.logging_utils</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.assert_and_log.html">detectors.sub2.logging_utils.assert_and_log</a></li>
-<li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.log_configs.html">detectors.sub2.logging_utils.log_configs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.setup_logging.html">detectors.sub2.logging_utils.setup_logging</a></li>
 <li class="toctree-l4"><a class="reference internal" href="detectors.sub2.logging_utils.LoggingSetup.html">detectors.sub2.logging_utils.LoggingSetup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#detectors.sub2.logging_utils.LoggingSetup"><code class="docutils literal notranslate"><span class="pre">LoggingSetup</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#detectors.sub2.logging_utils.assert_and_log"><code class="docutils literal notranslate"><span class="pre">assert_and_log()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#detectors.sub2.logging_utils.log_configs"><code class="docutils literal notranslate"><span class="pre">log_configs()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#detectors.sub2.logging_utils.setup_logging"><code class="docutils literal notranslate"><span class="pre">setup_logging()</span></code></a></li>
 </ul>
 </li>
@@ -101,10 +99,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="detectors.sub2.logging_utils.assert_and_log.html#detectors.sub2.logging_utils.assert_and_log" title="detectors.sub2.logging_utils.assert_and_log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_and_log</span></code></a></p></td>
 <td><p>Asserts a condition and logs an error message if the condition is not met.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="detectors.sub2.logging_utils.log_configs.html#detectors.sub2.logging_utils.log_configs" title="detectors.sub2.logging_utils.log_configs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_configs</span></code></a></p></td>
-<td><p>Logs the configurations to a file.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="detectors.sub2.logging_utils.setup_logging.html#detectors.sub2.logging_utils.setup_logging" title="detectors.sub2.logging_utils.setup_logging"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_logging</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="detectors.sub2.logging_utils.setup_logging.html#detectors.sub2.logging_utils.setup_logging" title="detectors.sub2.logging_utils.setup_logging"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_logging</span></code></a></p></td>
 <td><p>Start logger.</p></td>
 </tr>
 </tbody>
@@ -234,30 +229,6 @@
 <li><p><strong>AssertionError</strong> – If the condition is not met.</p></li>
 <li><p><strong>SystemExit</strong> – If the condition is not met, the function will terminate the program with a status code of 1.</p></li>
 </ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="detectors.sub2.logging_utils.log_configs">
-<span class="sig-prename descclassname"><span class="pre">detectors.sub2.logging_utils.</span></span><span class="sig-name descname"><span class="pre">log_configs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'log_config'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="oslab_utils.git_utils.CustomRepo.html#oslab_utils.git_utils.CustomRepo.None" title="oslab_utils.git_utils.CustomRepo.None"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/detectors/sub2/logging_utils.html#log_configs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#detectors.sub2.logging_utils.log_configs" title="Link to this definition">¶</a></dt>
-<dd><p>Logs the configurations to a file.</p>
-<p>The function takes in a dictionary of configurations, an output folder path, and an optional
-file name. It fills in placeholders in the code_config dictionary with actual values using
-the config_fill_auto function. Then, it constructs the log file path by joining the output
-folder path and the file name with a .toml extension. After that, it updates the configs
-dictionary with the filled code_config and saves the configurations to the log file using the
-save_config function.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>configs</strong> (<em>dict</em>) – A dictionary containing the configurations to be logged.</p></li>
-<li><p><strong>out_folder</strong> (<em>str</em>) – The path to the output folder where the log file will be saved.</p></li>
-<li><p><strong>file_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the log file. Defaults to ‘log_config’.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>

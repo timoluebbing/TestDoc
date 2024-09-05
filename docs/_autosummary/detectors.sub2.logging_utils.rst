@@ -16,7 +16,6 @@ detectors.sub2.logging\_utils
       :nosignatures:
    
       assert_and_log
-      log_configs
       setup_logging
    
    
